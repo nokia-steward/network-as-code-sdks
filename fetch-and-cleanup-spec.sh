@@ -5,7 +5,7 @@ set -eu
 # Fetch Network as Code API spec from staging environment
 
 curl --request POST \
-	--url https://graphql-platform.p-eu.rapidapi.com/ \
+	--url https://graphql-platform.p-eu.apihub.nokia.io/ \
 	--header 'Content-Type: application/json' \
 	--header 'x-rapidapi-host: graphql-platform.nokia-stage.rapidapi.com' \
 	--header "x-rapidapi-identity-key: $RAPID_IDENTITY" \
