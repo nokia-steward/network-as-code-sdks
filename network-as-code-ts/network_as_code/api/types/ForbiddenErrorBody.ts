@@ -3,14 +3,15 @@
 export interface ForbiddenErrorBody {
     status?: string | undefined;
     code?: ForbiddenErrorBody.Code | undefined;
-    /** Detailed error description */
+    /** A human-readable description of what the event represents */
     message: string;
 }
 
 export namespace ForbiddenErrorBody {
     export const Code = {
         PermissionDenied: "PERMISSION_DENIED",
-        SubscriptionMismatch: "SUBSCRIPTION_MISMATCH",
+        ConsentInfoNotAllowedScopesPurpose: "CONSENT_INFO.NOT_ALLOWED_SCOPES_PURPOSE",
+        ConsentInfoCaptureFrequencyExceeded: "CONSENT_INFO.CAPTURE_FREQUENCY_EXCEEDED",
     } as const;
     export type Code = (typeof Code)[keyof typeof Code];
 }

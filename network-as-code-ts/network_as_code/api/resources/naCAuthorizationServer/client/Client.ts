@@ -23,6 +23,92 @@ export class NaCAuthorizationServerClient {
     }
 
     /**
+     * Accepts incomplete OpenID4VP request; returns it with credential_authorization_jwt filled.
+     *
+     * @param {NetworkAsCodeApi.FillOpenid4VpAuthOpenid4VpPostRequest} request
+     * @param {NaCAuthorizationServerClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link NetworkAsCodeApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.naCAuthorizationServer.fillOpenid4VpAuthOpenid4VpPost({
+     *         nonce: "",
+     *         state: "",
+     *         dcql_query: {
+     *             credentials: [{
+     *                     format: "",
+     *                     id: "",
+     *                     meta: {
+     *                         "key": "value"
+     *                     }
+     *                 }]
+     *         }
+     *     })
+     */
+    public fillOpenid4VpAuthOpenid4VpPost(
+        request: NetworkAsCodeApi.FillOpenid4VpAuthOpenid4VpPostRequest = {},
+        requestOptions?: NaCAuthorizationServerClient.RequestOptions,
+    ): core.HttpResponsePromise<NetworkAsCodeApi.FillOpenid4VpAuthOpenid4VpPostResponse> {
+        return core.HttpResponsePromise.fromPromise(this.__fillOpenid4VpAuthOpenid4VpPost(request, requestOptions));
+    }
+
+    private async __fillOpenid4VpAuthOpenid4VpPost(
+        request: NetworkAsCodeApi.FillOpenid4VpAuthOpenid4VpPostRequest = {},
+        requestOptions?: NaCAuthorizationServerClient.RequestOptions,
+    ): Promise<core.WithRawResponse<NetworkAsCodeApi.FillOpenid4VpAuthOpenid4VpPostResponse>> {
+        const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
+        const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
+            _authRequest.headers,
+            this._options?.headers,
+            mergeOnlyDefinedHeaders({ "x-rapidapi-host": requestOptions?.rapidapiHost ?? this._options?.rapidapiHost }),
+            requestOptions?.headers,
+        );
+        const _response = await core.fetcher({
+            url: core.url.join(
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.NetworkAsCodeApiEnvironment.Default,
+                "oauth2/v1/auth/openid4vp",
+            ),
+            method: "POST",
+            headers: _headers,
+            contentType: "application/json",
+            queryParameters: requestOptions?.queryParams,
+            requestType: "json",
+            body: request,
+            timeoutMs: (requestOptions?.timeoutInSeconds ?? this._options?.timeoutInSeconds ?? 60) * 1000,
+            maxRetries: requestOptions?.maxRetries ?? this._options?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+            fetchFn: this._options?.fetch,
+            logging: this._options.logging,
+        });
+        if (_response.ok) {
+            return {
+                data: _response.body as NetworkAsCodeApi.FillOpenid4VpAuthOpenid4VpPostResponse,
+                rawResponse: _response.rawResponse,
+            };
+        }
+
+        if (_response.error.reason === "status-code") {
+            switch (_response.error.statusCode) {
+                case 422:
+                    throw new NetworkAsCodeApi.UnprocessableEntityError(
+                        _response.error.body as unknown,
+                        _response.rawResponse,
+                    );
+                default:
+                    throw new errors.NetworkAsCodeApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                        rawResponse: _response.rawResponse,
+                    });
+            }
+        }
+
+        return handleNonStatusCodeError(_response.error, _response.rawResponse, "POST", "/oauth2/v1/auth/openid4vp");
+    }
+
+    /**
      *
      *
      * @param {NetworkAsCodeApi.GetJwksNaCAuthorizationServerRequest} request

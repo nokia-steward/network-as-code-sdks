@@ -10,13 +10,76 @@ from ..core.jsonable_encoder import encode_path_param
 from ..core.parse_error import ParsingError
 from ..core.pydantic_utilities import parse_obj_as
 from ..core.request_options import RequestOptions
+from ..core.serialization import convert_and_respect_annotation_metadata
 from ..errors.unprocessable_entity_error import UnprocessableEntityError
+from .requests.fill_openid4vp_auth_openid4vp_post_request_dcql_query import (
+    FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryParams,
+)
+from .types.fill_openid4vp_auth_openid4vp_post_response import FillOpenid4VpAuthOpenid4VpPostResponse
 from pydantic import ValidationError
 
-
+# this is used as the default value for optional parameters
+OMIT = typing.cast(typing.Any, ...)
 class RawNaCAuthorizationServerClient:
     def __init__(self, *, client_wrapper: SyncClientWrapper):
         self._client_wrapper = client_wrapper
+    
+    def fill_openid4vp_auth_openid4vp_post(self, *, nonce: typing.Optional[str] = OMIT, state: typing.Optional[str] = OMIT, dcql_query: typing.Optional[FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryParams] = OMIT, request_options: typing.Optional[RequestOptions] = None) -> HttpResponse[FillOpenid4VpAuthOpenid4VpPostResponse]:
+        """
+        Accepts incomplete OpenID4VP request; returns it with credential_authorization_jwt filled.
+        
+        Parameters
+        ----------
+        nonce : typing.Optional[str]
+        
+        state : typing.Optional[str]
+        
+        dcql_query : typing.Optional[FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryParams]
+        
+        request_options : typing.Optional[RequestOptions]
+            Request-specific configuration.
+        
+        Returns
+        -------
+        HttpResponse[FillOpenid4VpAuthOpenid4VpPostResponse]
+            
+        """
+        _response = self._client_wrapper.httpx_client.request(
+            "oauth2/v1/auth/openid4vp",method="POST",
+            json={
+                "nonce": nonce,
+                "state": state,
+                "dcql_query": convert_and_respect_annotation_metadata(object_=dcql_query, annotation=FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryParams, direction="write"),
+            }
+            ,
+            headers={"content-type": "application/json", }
+            ,
+            request_options=request_options,omit=OMIT,
+        )
+        try:
+            if 200 <= _response.status_code < 300:
+                _data = typing.cast(
+                    FillOpenid4VpAuthOpenid4VpPostResponse,
+                    parse_obj_as(
+                        type_ =FillOpenid4VpAuthOpenid4VpPostResponse,  # type: ignore
+                        object_ =_response.json()
+                    )
+                )
+                return HttpResponse(response=_response, data=_data)
+            if _response.status_code == 422:
+                raise UnprocessableEntityError(headers=dict(_response.headers), body=typing.cast(
+                    typing.Any,
+                    parse_obj_as(
+                        type_ =typing.Any,  # type: ignore
+                        object_ =_response.json()
+                    )
+                ))
+            _response_json = _response.json()
+        except JSONDecodeError:
+            raise ApiError(status_code=_response.status_code, headers=dict(_response.headers), body=_response.text)
+        except ValidationError as e:
+            raise ParsingError(status_code=_response.status_code, headers=dict(_response.headers), body=_response.json(), cause=e)
+        raise ApiError(status_code=_response.status_code, headers=dict(_response.headers), body=_response_json)
     
     def get_jwks(self, nac_app_ref: str, *, request_options: typing.Optional[RequestOptions] = None) -> HttpResponse[typing.Any]:
         """
@@ -66,6 +129,63 @@ class RawNaCAuthorizationServerClient:
 class AsyncRawNaCAuthorizationServerClient:
     def __init__(self, *, client_wrapper: AsyncClientWrapper):
         self._client_wrapper = client_wrapper
+    
+    async def fill_openid4vp_auth_openid4vp_post(self, *, nonce: typing.Optional[str] = OMIT, state: typing.Optional[str] = OMIT, dcql_query: typing.Optional[FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryParams] = OMIT, request_options: typing.Optional[RequestOptions] = None) -> AsyncHttpResponse[FillOpenid4VpAuthOpenid4VpPostResponse]:
+        """
+        Accepts incomplete OpenID4VP request; returns it with credential_authorization_jwt filled.
+        
+        Parameters
+        ----------
+        nonce : typing.Optional[str]
+        
+        state : typing.Optional[str]
+        
+        dcql_query : typing.Optional[FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryParams]
+        
+        request_options : typing.Optional[RequestOptions]
+            Request-specific configuration.
+        
+        Returns
+        -------
+        AsyncHttpResponse[FillOpenid4VpAuthOpenid4VpPostResponse]
+            
+        """
+        _response = await self._client_wrapper.httpx_client.request(
+            "oauth2/v1/auth/openid4vp",method="POST",
+            json={
+                "nonce": nonce,
+                "state": state,
+                "dcql_query": convert_and_respect_annotation_metadata(object_=dcql_query, annotation=FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryParams, direction="write"),
+            }
+            ,
+            headers={"content-type": "application/json", }
+            ,
+            request_options=request_options,omit=OMIT,
+        )
+        try:
+            if 200 <= _response.status_code < 300:
+                _data = typing.cast(
+                    FillOpenid4VpAuthOpenid4VpPostResponse,
+                    parse_obj_as(
+                        type_ =FillOpenid4VpAuthOpenid4VpPostResponse,  # type: ignore
+                        object_ =_response.json()
+                    )
+                )
+                return AsyncHttpResponse(response=_response, data=_data)
+            if _response.status_code == 422:
+                raise UnprocessableEntityError(headers=dict(_response.headers), body=typing.cast(
+                    typing.Any,
+                    parse_obj_as(
+                        type_ =typing.Any,  # type: ignore
+                        object_ =_response.json()
+                    )
+                ))
+            _response_json = _response.json()
+        except JSONDecodeError:
+            raise ApiError(status_code=_response.status_code, headers=dict(_response.headers), body=_response.text)
+        except ValidationError as e:
+            raise ParsingError(status_code=_response.status_code, headers=dict(_response.headers), body=_response.json(), cause=e)
+        raise ApiError(status_code=_response.status_code, headers=dict(_response.headers), body=_response_json)
     
     async def get_jwks(self, nac_app_ref: str, *, request_options: typing.Optional[RequestOptions] = None) -> AsyncHttpResponse[typing.Any]:
         """

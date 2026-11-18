@@ -38,37 +38,17 @@ class RetrieveConsentInfoResponseStatusInfoItemParams(typing_extensions.TypedDic
     
     - `PENDING`: The requested data processing has not yet been established or fully validated under the applicable privacy regulations.
     
+                For example, the User has not yet provided Consent when it
+    is required. - `REQUESTED`: The permission for the requested data processing has been submitted but has not yet been granted or confirmed.
     
-    
-    
-    
-                For example, the User has not yet provided Consent when it is required.
-    - `REQUESTED`: The permission for the requested data processing has been submitted but has not yet been granted or confirmed.
-    
-    
-    
-    
-    
-                This is common when the API Consumer has initiated a request for Consent capture, but the User has not yet completed the process. For example, this occurs when a notice prompting the User to provide Consent has been displayed, but they have not yet made a decision.
-    - `REVOKED`: The User has actively withdrawn their permission for the requested data processing after previously opting in.
-    
-    
-    
-    
+                This is common when the API Consumer has initiated a request
+    for Consent capture, but the User has not yet completed the process. For example, this occurs when a notice prompting the User to provide Consent has been displayed, but they have not yet made a decision. - `REVOKED`: The User has actively withdrawn their permission for the requested data processing after previously opting in.
     
                 For example, the User revokes their Consent for the data processing.
     - `OBJECTED`: The user has opted out of the requested data processing, despite a previous explicit opt-in not being required.
     
-    
-    
-    
-    
-                This is common when the User has exercised their right to object to data processing under the applicable privacy regulations.
-    - `EXPIRED`: When applicable, the validity of the data processing has ceased due to the passage of time or a pre-defined condition.
-    
-    
-    
-    
+                This is common when the User has exercised their right to
+    object to data processing under the applicable privacy regulations. - `EXPIRED`: When applicable, the validity of the data processing has ceased due to the passage of time or a pre-defined condition.
     
                 This is common for time-limited Consents.
     """

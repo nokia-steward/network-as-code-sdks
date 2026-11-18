@@ -9,6 +9,6 @@ class ForbiddenErrorBodyParams(typing_extensions.TypedDict):
     code: typing_extensions.NotRequired[ForbiddenErrorBodyCode]
     message: str
     """
-    Detailed error description
+    A human-readable description of what the event represents
     """
     

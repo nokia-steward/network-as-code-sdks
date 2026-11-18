@@ -1,5 +1,151 @@
 # Reference
 ## Slice
+<details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">get_slice</a>(...) -> GetSliceSliceResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get network slice data.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.slice.get_slice(
+    id="id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">delete_slice</a>(...) -> DeleteSliceSliceResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Delete network slice. The slice state must not be active to perform this operation.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.slice.delete_slice(
+    id="id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">get_device_attachments</a>() -> typing.List[GetDeviceAttachmentsSliceResponseItem]</code></summary>
 <dl>
 <dd>
@@ -185,298 +331,6 @@ client.slice.attach_device(
 <dd>
 
 **webhook:** `typing.Optional[AttachDeviceSliceRequestWebhook]` — Callback settings for the requester application.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">activate</a>(...) -> ActivateSliceResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Activate a network slice.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.slice.activate(
-    id="id",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**id:** `str` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">get_device_attachment</a>(...) -> GetDeviceAttachmentSliceResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Retrieve the given device attach resource.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.slice.get_device_attachment(
-    resource_id="resource_id",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**resource_id:** `str` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">delete_device_attachment</a>(...) -> DeleteDeviceAttachmentSliceResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Detach device from a specific slice.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.slice.delete_device_attachment(
-    resource_id="resource_id",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**resource_id:** `str` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">deactivate</a>(...) -> DeactivateSliceResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Deactivate a network slice. The slice state must be active to be able to perform this operation.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.slice.deactivate(
-    id="id",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**id:** `str` 
     
 </dd>
 </dl>
@@ -788,6 +642,298 @@ client.slice.create_slice(
 </dl>
 </details>
 
+<details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">deactivate</a>(...) -> DeactivateSliceResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Deactivate a network slice. The slice state must be active to be able to perform this operation.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.slice.deactivate(
+    id="id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">activate</a>(...) -> ActivateSliceResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Activate a network slice.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.slice.activate(
+    id="id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">get_device_attachment</a>(...) -> GetDeviceAttachmentSliceResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve the given device attach resource.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.slice.get_device_attachment(
+    resource_id="resource_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resource_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">delete_device_attachment</a>(...) -> DeleteDeviceAttachmentSliceResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Detach device from a specific slice.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.slice.delete_device_attachment(
+    resource_id="resource_id",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resource_id:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">subscriber_operation</a>(...) -> SubscriberOperationSliceResponse</code></summary>
 <dl>
 <dd>
@@ -938,7 +1084,8 @@ client.slice.subscriber_operation(
 </dl>
 </details>
 
-<details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">get_slice</a>(...) -> GetSliceSliceResponse</code></summary>
+## Location
+<details><summary><code>client.location.<a href="src/networkAsCode/location/client.py">verify</a>(...) -> VerifyLocationResponse</code></summary>
 <dl>
 <dd>
 
@@ -950,7 +1097,7 @@ client.slice.subscriber_operation(
 <dl>
 <dd>
 
-Get network slice data.
+Verify whether the location of a device is within a requested area. The operation returns a verification result and, optionally, a match rate estimation for the location verification in percent.
 </dd>
 </dl>
 </dd>
@@ -967,14 +1114,20 @@ Get network slice data.
 ```python
 from networkAsCode import NetworkAsCodeApi
 from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.location import VerifyLocationRequestDevice, VerifyLocationRequestArea
 
 client = NetworkAsCodeApi(
     api_key="<value>",
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.slice.get_slice(
-    id="id",
+client.location.verify(
+    device=VerifyLocationRequestDevice(
+        phone_number="+99999991000",
+    ),
+    area=VerifyLocationRequestArea(
+        area_type="CIRCLE",
+    ),
 )
 
 ```
@@ -991,7 +1144,34 @@ client.slice.get_slice(
 <dl>
 <dd>
 
-**id:** `str` 
+**device:** `VerifyLocationRequestDevice` 
+
+End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
+
+The developer can choose to provide the below specified device identifiers:
+
+* `ipv4Address`
+* `ipv6Address`
+* `phoneNumber`
+* `networkAccessIdentifier`
+
+NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**area:** `VerifyLocationRequestArea` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**max_age:** `typing.Optional[int]` — The maximum age (in seconds) of the available location, which is accepted for the verification.
     
 </dd>
 </dl>
@@ -1011,7 +1191,7 @@ client.slice.get_slice(
 </dl>
 </details>
 
-<details><summary><code>client.slice.<a href="src/networkAsCode/slice/client.py">delete_slice</a>(...) -> DeleteSliceSliceResponse</code></summary>
+<details><summary><code>client.location.<a href="src/networkAsCode/location/client.py">verify_v1</a>(...) -> VerifyV1LocationResponse</code></summary>
 <dl>
 <dd>
 
@@ -1023,7 +1203,7 @@ client.slice.get_slice(
 <dl>
 <dd>
 
-Delete network slice. The slice state must not be active to perform this operation.
+Verify whether the location of a device is within a requested area. The operation returns a verification result and, optionally, a match rate estimation for the location verification in percent.
 </dd>
 </dl>
 </dd>
@@ -1040,14 +1220,20 @@ Delete network slice. The slice state must not be active to perform this operati
 ```python
 from networkAsCode import NetworkAsCodeApi
 from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.location import VerifyV1LocationRequestDevice, VerifyV1LocationRequestArea
 
 client = NetworkAsCodeApi(
     api_key="<value>",
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.slice.delete_slice(
-    id="id",
+client.location.verify_v_1(
+    device=VerifyV1LocationRequestDevice(
+        phone_number="+99999991000",
+    ),
+    area=VerifyV1LocationRequestArea(
+        area_type="CIRCLE",
+    ),
 )
 
 ```
@@ -1064,7 +1250,43 @@ client.slice.delete_slice(
 <dl>
 <dd>
 
-**id:** `str` 
+**area:** `VerifyV1LocationRequestArea` — Base schema for all areas
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[str]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**device:** `typing.Optional[VerifyV1LocationRequestDevice]` 
+
+End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
+
+The developer can choose to provide the below specified device identifiers:
+
+* `ipv4Address`
+* `ipv6Address`
+* `phoneNumber`
+* `networkAccessIdentifier`
+
+NOTE1: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device
+NOTE2: for the Commonalities release v0.4, we are enforcing that the networkAccessIdentifier is only part of the schema for future-proofing, and CAMARA does not currently allow its use. After the CAMARA meta-release work is concluded and the relevant issues are resolved, its use will need to be explicitly documented in the guidelines.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**max_age:** `typing.Optional[int]` — The maximum age (in seconds) for the location known by the implementation, which is accepted for the verification. Absence of maxAge means "any age" and maxAge=0 means a fresh calculation.
     
 </dd>
 </dl>
@@ -1084,8 +1306,7 @@ client.slice.delete_slice(
 </dl>
 </details>
 
-## Well Known Metadata
-<details><summary><code>client.well_known_metadata.<a href="src/networkAsCode/well_known_metadata/client.py">get_openid_configuration</a>() -> GetOpenidConfigurationWellKnownMetadataResponse</code></summary>
+<details><summary><code>client.location.<a href="src/networkAsCode/location/client.py">retrieve</a>(...) -> RetrieveLocationResponse</code></summary>
 <dl>
 <dd>
 
@@ -1097,7 +1318,7 @@ client.slice.delete_slice(
 <dl>
 <dd>
 
- 
+Retrieve the area where a certain user device is localized.
 </dd>
 </dl>
 </dd>
@@ -1114,13 +1335,19 @@ client.slice.delete_slice(
 ```python
 from networkAsCode import NetworkAsCodeApi
 from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.location import RetrieveLocationRequestDevice
 
 client = NetworkAsCodeApi(
     api_key="<value>",
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.well_known_metadata.get_openid_configuration()
+client.location.retrieve(
+    device=RetrieveLocationRequestDevice(
+        phone_number="+99999991000",
+    ),
+    max_age=60,
+)
 
 ```
 </dd>
@@ -1136,128 +1363,29 @@ client.well_known_metadata.get_openid_configuration()
 <dl>
 <dd>
 
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+**device:** `RetrieveLocationRequestDevice` 
+
+End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
+
+The developer can choose to provide the below specified device identifiers:
+
+* `ipv4Address`
+* `ipv6Address`
+* `phoneNumber`
+* `networkAccessIdentifier`
+
+NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device.
     
 </dd>
 </dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.well_known_metadata.<a href="src/networkAsCode/well_known_metadata/client.py">get_oauth_authorization_server</a>() -> GetOauthAuthorizationServerWellKnownMetadataResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
 
 <dl>
 <dd>
 
-<dl>
-<dd>
-
- 
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.well_known_metadata.get_oauth_authorization_server()
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+**max_age:** `typing.Optional[int]` — Maximum age of the location information which is accepted for the location retrieval (in seconds)
     
 </dd>
 </dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.well_known_metadata.<a href="src/networkAsCode/well_known_metadata/client.py">get_security_txt</a>() -> str</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
- 
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.well_known_metadata.get_security_txt()
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
 
 <dl>
 <dd>
@@ -1275,7 +1403,7 @@ client.well_known_metadata.get_security_txt()
 </details>
 
 ## DeviceStatus
-<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">get_subscription</a>(...) -> GetSubscriptionDeviceStatusResponse</code></summary>
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">list_roaming_subscriptions_v08</a>(...) -> typing.List[ListRoamingSubscriptionsV08DeviceStatusResponseItem]</code></summary>
 <dl>
 <dd>
 
@@ -1287,7 +1415,7 @@ client.well_known_metadata.get_security_txt()
 <dl>
 <dd>
 
-retrieve event subscription information for a given subscription.
+Retrieve a list of device roaming status event subscription(s)
 </dd>
 </dl>
 </dd>
@@ -1310,9 +1438,7 @@ client = NetworkAsCodeApi(
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.device_status.get_subscription(
-    subscription_id="subscriptionId",
-)
+client.device_status.list_roaming_subscriptions_v_08()
 
 ```
 </dd>
@@ -1328,7 +1454,7 @@ client.device_status.get_subscription(
 <dl>
 <dd>
 
-**subscription_id:** `str` — Subscription identifier that was obtained from the create subscription operation
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
     
 </dd>
 </dl>
@@ -1348,7 +1474,7 @@ client.device_status.get_subscription(
 </dl>
 </details>
 
-<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">delete_subscription</a>(...) -> typing.Optional[DeleteSubscriptionDeviceStatusResponse]</code></summary>
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">create_roaming_subscription_v08</a>(...) -> CreateRoamingSubscriptionV08DeviceStatusResponse</code></summary>
 <dl>
 <dd>
 
@@ -1360,7 +1486,7 @@ client.device_status.get_subscription(
 <dl>
 <dd>
 
-delete a  given event subscription.
+Create a device roaming status event subscription for a device
 </dd>
 </dl>
 </dd>
@@ -1377,750 +1503,7 @@ delete a  given event subscription.
 ```python
 from networkAsCode import NetworkAsCodeApi
 from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.device_status.delete_subscription(
-    subscription_id="subscriptionId",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">check_connectivity</a>(...) -> CheckConnectivityDeviceStatusResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Get the current connectivity status information
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-from networkAsCode.device_status import CheckConnectivityDeviceStatusRequestDevice
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.device_status.check_connectivity(
-    device=CheckConnectivityDeviceStatusRequestDevice(
-        phone_number="+99999991000",
-    ),
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**device:** `CheckConnectivityDeviceStatusRequestDevice` 
-
-End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
-
-The developer can choose to provide the below specified device identifiers:
-
-* `ipv4Address`
-* `ipv6Address`
-* `phoneNumber`
-* `networkAccessIdentifier`
-
-NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">retrieve_roaming_status</a>(...) -> RetrieveRoamingStatusDeviceStatusResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Get the current roaming status and the country information
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-from networkAsCode.device_status import RetrieveRoamingStatusDeviceStatusRequestDevice
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.device_status.retrieve_roaming_status(
-    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
-    device=RetrieveRoamingStatusDeviceStatusRequestDevice(
-        phone_number="+99999991000",
-    ),
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Literal` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**device:** `typing.Optional[RetrieveRoamingStatusDeviceStatusRequestDevice]` 
-
-End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
-
-The developer can choose to provide the below specified device identifiers:
-
-* `ipv4Address`
-* `ipv6Address`
-* `phoneNumber`
-* `networkAccessIdentifier`
-
-NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">get_roaming_subscription</a>(...) -> GetRoamingSubscriptionDeviceStatusResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-retrieve device roaming status subscription information for a given subscription.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.device_status.get_roaming_subscription(
-    subscription_id="subscriptionId",
-    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Literal` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">delete_roaming_subscription</a>(...) -> typing.Optional[DeleteRoamingSubscriptionDeviceStatusResponse]</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Delete a given device-roaming-status subscription by ID
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.device_status.delete_roaming_subscription(
-    subscription_id="subscriptionId",
-    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Literal` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">get_reachability_subscription</a>(...) -> GetReachabilitySubscriptionDeviceStatusResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Retrieve a given subscription by ID
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.device_status.get_reachability_subscription(
-    subscription_id="subscriptionId",
-    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Literal` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">delete_reachability_subscription</a>(...) -> typing.Optional[DeleteReachabilitySubscriptionDeviceStatusResponse]</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Delete a given subscription by ID
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.device_status.delete_reachability_subscription(
-    subscription_id="subscriptionId",
-    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Literal` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">retrieve_reachability_status</a>(...) -> RetrieveReachabilityStatusDeviceStatusResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Get the current reachability status information
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-from networkAsCode.device_status import RetrieveReachabilityStatusDeviceStatusRequestDevice
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.device_status.retrieve_reachability_status(
-    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
-    device=RetrieveReachabilityStatusDeviceStatusRequestDevice(
-        phone_number="+99999991000",
-    ),
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Literal` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**device:** `typing.Optional[RetrieveReachabilityStatusDeviceStatusRequestDevice]` 
-
-End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
-
-The developer can choose to provide the below specified device identifiers:
-
-* `ipv4Address`
-* `ipv6Address`
-* `phoneNumber`
-* `networkAccessIdentifier`
-
-NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">list_subscriptions</a>() -> typing.List[ListSubscriptionsDeviceStatusResponseItem]</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Retrieve a list of device status event subscription(s)
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.device_status.list_subscriptions()
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">create_subscription</a>(...) -> CreateSubscriptionDeviceStatusResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Create a device status event subscription for a device
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-from networkAsCode.device_status import CreateSubscriptionDeviceStatusRequestSubscriptionDetail, CreateSubscriptionDeviceStatusRequestSubscriptionDetailDevice, CreateSubscriptionDeviceStatusRequestWebhook
+from networkAsCode.device_status import CreateRoamingSubscriptionV08DeviceStatusRequestSinkCredential, CreateRoamingSubscriptionV08DeviceStatusRequestConfig, CreateRoamingSubscriptionV08DeviceStatusRequestConfigSubscriptionDetail, CreateRoamingSubscriptionV08DeviceStatusRequestConfigSubscriptionDetailDevice
 import datetime
 
 client = NetworkAsCodeApi(
@@ -2128,17 +1511,24 @@ client = NetworkAsCodeApi(
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.device_status.create_subscription(
-    subscription_detail=CreateSubscriptionDeviceStatusRequestSubscriptionDetail(
-        device=CreateSubscriptionDeviceStatusRequestSubscriptionDetailDevice(
-            phone_number="+36719991000",
-        ),
-        type="org.camaraproject.device-status.v0.roaming-status",
+client.device_status.create_roaming_subscription_v_08(
+    protocol="HTTP",
+    sink="https://endpoint.example.com/sink",
+    sink_credential=CreateRoamingSubscriptionV08DeviceStatusRequestSinkCredential(
+        credential_type="ACCESSTOKEN",
     ),
-    subscription_expire_time=datetime.datetime.fromisoformat("2026-01-17T13:18:23+00:00"),
-    webhook=CreateSubscriptionDeviceStatusRequestWebhook(
-        notification_url="https://application-server.com",
-        notification_auth_token="c8974e592c2fa383d4a3960714",
+    types=[
+        "org.camaraproject.device-roaming-status-subscriptions.v0.roaming-status"
+    ],
+    config=CreateRoamingSubscriptionV08DeviceStatusRequestConfig(
+        subscription_detail=CreateRoamingSubscriptionV08DeviceStatusRequestConfigSubscriptionDetail(
+            device=CreateRoamingSubscriptionV08DeviceStatusRequestConfigSubscriptionDetailDevice(
+                phone_number="+99999991000",
+            ),
+        ),
+        subscription_expire_time=datetime.datetime.fromisoformat("2023-01-17T13:18:23+00:00"),
+        subscription_max_events=5,
+        initial_event=True,
     ),
 )
 
@@ -2156,7 +1546,7 @@ client.device_status.create_subscription(
 <dl>
 <dd>
 
-**subscription_detail:** `CreateSubscriptionDeviceStatusRequestSubscriptionDetail` — The detail of the requested event subscription
+**protocol:** `CreateRoamingSubscriptionV08DeviceStatusRequestProtocol` — Identifier of a delivery protocol. Only HTTP is allowed for now
     
 </dd>
 </dl>
@@ -2164,7 +1554,7 @@ client.device_status.create_subscription(
 <dl>
 <dd>
 
-**webhook:** `CreateSubscriptionDeviceStatusRequestWebhook` — Webhook information for event channel
+**sink:** `str` — The address to which events shall be delivered using the selected protocol.
     
 </dd>
 </dl>
@@ -2172,7 +1562,39 @@ client.device_status.create_subscription(
 <dl>
 <dd>
 
-**subscription_expire_time:** `typing.Optional[datetime.datetime]` — The subscription expiration time in date-time format.
+**types:** `typing.List[CreateRoamingSubscriptionV08DeviceStatusRequestTypesItem]` 
+
+Camara Event types eligible to be delivered by this subscription.
+Note: for the current Commonalities version (v0.5) only one event type per subscription is allowed, yet in the following releases use of array of event types SHALL be specified without changing this definition.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**config:** `CreateRoamingSubscriptionV08DeviceStatusRequestConfig` 
+
+Implementation-specific configuration parameters needed by the subscription manager for acquiring events.
+In CAMARA we have predefined attributes like `subscriptionExpireTime`, `subscriptionMaxEvents`, `initialEvent`
+Specific event type attributes must be defined in `subscriptionDetail`
+Note: if a request is performed for several event type, all subscribed event will use same `config` parameters.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sink_credential:** `typing.Optional[CreateRoamingSubscriptionV08DeviceStatusRequestSinkCredential]` — A sink credential provides authentication or authorization information necessary to enable delivery of events to a target.
     
 </dd>
 </dl>
@@ -2399,6 +1821,257 @@ Note: if a request is performed for several event type, all subscribed event wil
 </dl>
 </details>
 
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">get_roaming_subscription</a>(...) -> GetRoamingSubscriptionDeviceStatusResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+retrieve device roaming status subscription information for a given subscription.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.get_roaming_subscription(
+    subscription_id="subscriptionId",
+    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Literal` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">delete_roaming_subscription</a>(...) -> typing.Optional[DeleteRoamingSubscriptionDeviceStatusResponse]</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Delete a given device-roaming-status subscription by ID
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.delete_roaming_subscription(
+    subscription_id="subscriptionId",
+    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Literal` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">check_connectivity</a>(...) -> CheckConnectivityDeviceStatusResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get the current connectivity status information
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.device_status import CheckConnectivityDeviceStatusRequestDevice
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.check_connectivity(
+    device=CheckConnectivityDeviceStatusRequestDevice(
+        phone_number="+99999991000",
+    ),
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**device:** `CheckConnectivityDeviceStatusRequestDevice` 
+
+End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
+
+The developer can choose to provide the below specified device identifiers:
+
+* `ipv4Address`
+* `ipv6Address`
+* `phoneNumber`
+* `networkAccessIdentifier`
+
+NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">check_roaming</a>(...) -> CheckRoamingDeviceStatusResponse</code></summary>
 <dl>
 <dd>
@@ -2467,6 +2140,832 @@ The developer can choose to provide the below specified device identifiers:
 * `networkAccessIdentifier`
 
 NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">list_subscriptions</a>() -> typing.List[ListSubscriptionsDeviceStatusResponseItem]</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a list of device status event subscription(s)
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.list_subscriptions()
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">create_subscription</a>(...) -> CreateSubscriptionDeviceStatusResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Create a device status event subscription for a device
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.device_status import CreateSubscriptionDeviceStatusRequestSubscriptionDetail, CreateSubscriptionDeviceStatusRequestSubscriptionDetailDevice, CreateSubscriptionDeviceStatusRequestWebhook
+import datetime
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.create_subscription(
+    subscription_detail=CreateSubscriptionDeviceStatusRequestSubscriptionDetail(
+        device=CreateSubscriptionDeviceStatusRequestSubscriptionDetailDevice(
+            phone_number="+36719991000",
+        ),
+        type="org.camaraproject.device-status.v0.roaming-status",
+    ),
+    subscription_expire_time=datetime.datetime.fromisoformat("2026-01-17T13:18:23+00:00"),
+    webhook=CreateSubscriptionDeviceStatusRequestWebhook(
+        notification_url="https://application-server.com",
+        notification_auth_token="c8974e592c2fa383d4a3960714",
+    ),
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_detail:** `CreateSubscriptionDeviceStatusRequestSubscriptionDetail` — The detail of the requested event subscription
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**webhook:** `CreateSubscriptionDeviceStatusRequestWebhook` — Webhook information for event channel
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**subscription_expire_time:** `typing.Optional[datetime.datetime]` — The subscription expiration time in date-time format.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">get_subscription</a>(...) -> GetSubscriptionDeviceStatusResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+retrieve event subscription information for a given subscription.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.get_subscription(
+    subscription_id="subscriptionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">delete_subscription</a>(...) -> typing.Optional[DeleteSubscriptionDeviceStatusResponse]</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+delete a  given event subscription.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.delete_subscription(
+    subscription_id="subscriptionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">retrieve_roaming_status</a>(...) -> RetrieveRoamingStatusDeviceStatusResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get the current roaming status and the country information
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.device_status import RetrieveRoamingStatusDeviceStatusRequestDevice
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.retrieve_roaming_status(
+    device=RetrieveRoamingStatusDeviceStatusRequestDevice(
+        phone_number="+99999991000",
+    ),
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**device:** `typing.Optional[RetrieveRoamingStatusDeviceStatusRequestDevice]` 
+
+End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
+
+The developer can choose to provide the below specified device identifiers:
+
+* `ipv4Address`
+* `ipv6Address`
+* `phoneNumber`
+* `networkAccessIdentifier`
+
+NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">retrieve_reachability_status</a>(...) -> RetrieveReachabilityStatusDeviceStatusResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get the current reachability status information
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.device_status import RetrieveReachabilityStatusDeviceStatusRequestDevice
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.retrieve_reachability_status(
+    device=RetrieveReachabilityStatusDeviceStatusRequestDevice(
+        phone_number="+99999991000",
+    ),
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**device:** `typing.Optional[RetrieveReachabilityStatusDeviceStatusRequestDevice]` 
+
+End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
+
+The developer can choose to provide the below specified device identifiers:
+
+* `ipv4Address`
+* `ipv6Address`
+* `phoneNumber`
+* `networkAccessIdentifier`
+
+NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">get_reachability_subscription</a>(...) -> GetReachabilitySubscriptionDeviceStatusResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a given subscription by ID
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.get_reachability_subscription(
+    subscription_id="subscriptionId",
+    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Literal` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">delete_reachability_subscription</a>(...) -> typing.Optional[DeleteReachabilitySubscriptionDeviceStatusResponse]</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Delete a given subscription by ID
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.delete_reachability_subscription(
+    subscription_id="subscriptionId",
+    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Literal` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">get_reachability_subscription_v08</a>(...) -> GetReachabilitySubscriptionV08DeviceStatusResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a given subscription by ID
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.get_reachability_subscription_v_08(
+    subscription_id="subscriptionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">delete_reachability_subscription_v08</a>(...) -> typing.Optional[DeleteReachabilitySubscriptionV08DeviceStatusResponse]</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Delete a given subscription by ID
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.delete_reachability_subscription_v_08(
+    subscription_id="subscriptionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
     
 </dd>
 </dl>
@@ -2693,8 +3192,7 @@ Note: if a request is performed for several event type, all subscribed event wil
 </dl>
 </details>
 
-## ConsentInfo
-<details><summary><code>client.consent_info.<a href="src/networkAsCode/consent_info/client.py">retrieve</a>(...) -> RetrieveConsentInfoResponse</code></summary>
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">list_reachability_subscriptions_v08</a>(...) -> typing.List[ListReachabilitySubscriptionsV08DeviceStatusResponseItem]</code></summary>
 <dl>
 <dd>
 
@@ -2706,7 +3204,7 @@ Note: if a request is performed for several event type, all subscribed event wil
 <dl>
 <dd>
 
-Create a request to retrieve the validity status of the API Consumer data processing for a given User, scope(s) and Purpose.
+Retrieve a list of device reachability status event subscription(s)
 </dd>
 </dl>
 </dd>
@@ -2729,14 +3227,7 @@ client = NetworkAsCodeApi(
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.consent_info.retrieve(
-    phone_number="+99999991000",
-    scopes=[
-        "location-verification:verify"
-    ],
-    purpose="dpv:FraudPreventionAndDetection",
-    request_capture_url=False,
-)
+client.device_status.list_reachability_subscriptions_v_08()
 
 ```
 </dd>
@@ -2752,43 +3243,7 @@ client.consent_info.retrieve(
 <dl>
 <dd>
 
-**scopes:** `typing.List[str]` — List of requested scopes. The scope is a string that represents the access rights that the API Consumer is requesting from the User.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**purpose:** `str` — The reason for which personal data will be processed by the API Consumer. CAMARA defines a standard set of Purposes which can be used by API Consumers to specify the reason for their intended personal data processing. CAMARA uses the [W3C Data Privacy Vocabulary](https://w3c.github.io/dpv/2.0/dpv/) (DPV) to represent these purposes e.g. `dpv:FraudPreventionAndDetection` or `dpv:RequestedServiceProvision`.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_capture_url:** `bool` 
-
-A boolean flag indicating whether the API Consumer requests API Provider to return a Consent capture URL.
-* `true` - If set to `true` the API will include a `captureUrl` in the response body if applicable.
-* `false` - The API will omit the Consent capture URL from the response.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
 **correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**phone_number:** `typing.Optional[str]` — A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
     
 </dd>
 </dl>
@@ -2808,8 +3263,7 @@ A boolean flag indicating whether the API Consumer requests API Provider to retu
 </dl>
 </details>
 
-## NumberRecycling
-<details><summary><code>client.number_recycling.<a href="src/networkAsCode/number_recycling/client.py">check</a>(...) -> CheckNumberRecyclingResponse</code></summary>
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">create_reachability_subscription_v08</a>(...) -> CreateReachabilitySubscriptionV08DeviceStatusResponse</code></summary>
 <dl>
 <dd>
 
@@ -2821,7 +3275,7 @@ A boolean flag indicating whether the API Consumer requests API Provider to retu
 <dl>
 <dd>
 
-Check whether the subscriber of the phone number has changed.
+Create a device reachability status event subscription for a device
 </dd>
 </dl>
 </dd>
@@ -2838,6 +3292,7 @@ Check whether the subscriber of the phone number has changed.
 ```python
 from networkAsCode import NetworkAsCodeApi
 from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.device_status import CreateReachabilitySubscriptionV08DeviceStatusRequestSinkCredential, CreateReachabilitySubscriptionV08DeviceStatusRequestConfig, CreateReachabilitySubscriptionV08DeviceStatusRequestConfigSubscriptionDetail, CreateReachabilitySubscriptionV08DeviceStatusRequestConfigSubscriptionDetailDevice
 import datetime
 
 client = NetworkAsCodeApi(
@@ -2845,9 +3300,25 @@ client = NetworkAsCodeApi(
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.number_recycling.check(
-    phone_number="+99999991000",
-    specified_date=datetime.date.fromisoformat("2024-10-31"),
+client.device_status.create_reachability_subscription_v_08(
+    protocol="HTTP",
+    sink="https://endpoint.example.com/sink",
+    sink_credential=CreateReachabilitySubscriptionV08DeviceStatusRequestSinkCredential(
+        credential_type="ACCESSTOKEN",
+    ),
+    types=[
+        "org.camaraproject.device-reachability-status-subscriptions.v0.reachability-data"
+    ],
+    config=CreateReachabilitySubscriptionV08DeviceStatusRequestConfig(
+        subscription_detail=CreateReachabilitySubscriptionV08DeviceStatusRequestConfigSubscriptionDetail(
+            device=CreateReachabilitySubscriptionV08DeviceStatusRequestConfigSubscriptionDetailDevice(
+                phone_number="+99999991000",
+            ),
+        ),
+        subscription_expire_time=datetime.datetime.fromisoformat("2023-01-17T13:18:23+00:00"),
+        subscription_max_events=5,
+        initial_event=True,
+    ),
 )
 
 ```
@@ -2864,7 +3335,7 @@ client.number_recycling.check(
 <dl>
 <dd>
 
-**specified_date:** `datetime.date` — Specified date to check whether there has been a change in the subscriber associated with the specific phone number, in RFC 3339 calendar date format (YYYY-MM-DD).
+**protocol:** `CreateReachabilitySubscriptionV08DeviceStatusRequestProtocol` — Identifier of a delivery protocol. Only HTTP is allowed for now
     
 </dd>
 </dl>
@@ -2872,7 +3343,31 @@ client.number_recycling.check(
 <dl>
 <dd>
 
-**authorization:** `typing.Optional[str]` — authorization header for token
+**sink:** `str` — The address to which events shall be delivered using the selected protocol.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**types:** `typing.List[CreateReachabilitySubscriptionV08DeviceStatusRequestTypesItem]` 
+
+Camara Event types eligible to be delivered by this subscription.
+Note: For the current Commonalities API design guidelines, only one event type per subscription is allowed, yet in the following releases use of array of event types SHALL be specified without changing this definition.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**config:** `CreateReachabilitySubscriptionV08DeviceStatusRequestConfig` 
+
+Implementation-specific configuration parameters needed by the subscription manager for acquiring events.
+In CAMARA we have predefined attributes like `subscriptionExpireTime`, `subscriptionMaxEvents`, `initialEvent`
+Specific event type attributes must be defined in `subscriptionDetail`
+Note: if a request is performed for several event type, all subscribed event will use same `config` parameters.
     
 </dd>
 </dl>
@@ -2888,7 +3383,169 @@ client.number_recycling.check(
 <dl>
 <dd>
 
-**phone_number:** `typing.Optional[str]` — A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+**sink_credential:** `typing.Optional[CreateReachabilitySubscriptionV08DeviceStatusRequestSinkCredential]` — A sink credential provides authentication or authorization information necessary to enable delivery of events to a target.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">get_roaming_subscription_v08</a>(...) -> GetRoamingSubscriptionV08DeviceStatusResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+retrieve device roaming status subscription information for a given subscription.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.get_roaming_subscription_v_08(
+    subscription_id="subscriptionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.device_status.<a href="src/networkAsCode/device_status/client.py">delete_roaming_subscription_v08</a>(...) -> typing.Optional[DeleteRoamingSubscriptionV08DeviceStatusResponse]</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Delete a given device-roaming-status subscription by ID
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.device_status.delete_roaming_subscription_v_08(
+    subscription_id="subscriptionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
     
 </dd>
 </dl>
@@ -2909,6 +3566,141 @@ client.number_recycling.check(
 </details>
 
 ## NumberVerification
+<details><summary><code>client.number_verification.<a href="src/networkAsCode/number_verification/client.py">verify_v2</a>(...) -> VerifyV2NumberVerificationResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Verifies if the specified phone number (either in plain text or hashed format) matches the one that the user is currently using. Only one of the plain or hashed formats must be provided.
+- The number verification will be done for the user that has authenticated via mobile network
+- It returns true/false depending on if the hashed phone number received as input matches the authenticated user's `device phone number` associated to the access token
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.number_verification import VerifyV2NumberVerificationRequestBodyPhoneNumber
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.number_verification.verify_v_2(
+    request=VerifyV2NumberVerificationRequestBodyPhoneNumber(
+        phone_number="+99999991000",
+    ),
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `VerifyV2NumberVerificationRequestBody` — Payload to verify the phone number. Exactly one of `phoneNumber` or `hashedPhoneNumber` is required; `credential` is optional.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.number_verification.<a href="src/networkAsCode/number_verification/client.py">get_device_phone_number</a>()</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.number_verification.get_device_phone_number()
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.number_verification.<a href="src/networkAsCode/number_verification/client.py">verify</a>(...) -> VerifyNumberVerificationResponse</code></summary>
 <dl>
 <dd>
@@ -2980,7 +3772,7 @@ client.number_verification.verify(
 <dl>
 <dd>
 
-**authorization:** `typing.Optional[str]` — authorization header for token
+**correlator:** `typing.Optional[str]` — Correlation id for the different services
     
 </dd>
 </dl>
@@ -2988,7 +3780,7 @@ client.number_verification.verify(
 <dl>
 <dd>
 
-**correlator:** `typing.Optional[str]` — Correlation id for the different services
+**authorization:** `typing.Optional[str]` — authorization header for token
     
 </dd>
 </dl>
@@ -3024,9 +3816,25 @@ client.number_verification.verify(
 </dl>
 </details>
 
-<details><summary><code>client.number_verification.<a href="src/networkAsCode/number_verification/client.py">get_device_phone_number</a>()</code></summary>
+<details><summary><code>client.number_verification.<a href="src/networkAsCode/number_verification/client.py">get_device_phone_number_v2</a>(...) -> GetDevicePhoneNumberV2NumberVerificationResponse</code></summary>
 <dl>
 <dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Returns the phone number so the API clients can verify the number themselves:
+- It will be done for the user that has authenticated via mobile network
+- It returns the authenticated user's `device phone number` associated to the access token
+</dd>
+</dl>
+</dd>
+</dl>
 
 #### 🔌 Usage
 
@@ -3045,7 +3853,7 @@ client = NetworkAsCodeApi(
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.number_verification.get_device_phone_number()
+client.number_verification.get_device_phone_number_v_2()
 
 ```
 </dd>
@@ -3057,6 +3865,1951 @@ client.number_verification.get_device_phone_number()
 
 <dl>
 <dd>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+## SIM Swap Subscriptions v0.3.0
+<details><summary><code>client.sim_swap_subscriptions_v030.<a href="src/networkAsCode/sim_swap_subscriptions_v030/client.py">retrieve_subscription_sim_subs_v0</a>(...) -> RetrieveSubscriptionSimSubsV0Response</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a given subscription by ID
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.sim_swap_subscriptions_v_030.retrieve_subscription_sim_subs_v_0(
+    subscription_id="subscriptionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.sim_swap_subscriptions_v030.<a href="src/networkAsCode/sim_swap_subscriptions_v030/client.py">delete_subscription_sim_subs_v0</a>(...) -> typing.Optional[DeleteSubscriptionSimSubsV0Response]</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Delete a given subscription by ID
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.sim_swap_subscriptions_v_030.delete_subscription_sim_subs_v_0(
+    subscription_id="subscriptionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.sim_swap_subscriptions_v030.<a href="src/networkAsCode/sim_swap_subscriptions_v030/client.py">retrieve_subscription_list_sim_subs_v0</a>(...) -> typing.List[RetrieveSubscriptionListSimSubsV0ResponseItem]</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a list of SIM swap event subscription(s)
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.sim_swap_subscriptions_v_030.retrieve_subscription_list_sim_subs_v_0()
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.sim_swap_subscriptions_v030.<a href="src/networkAsCode/sim_swap_subscriptions_v030/client.py">create_sim_swap_subscription</a>(...) -> CreateSimSwapSubscriptionResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Create a SIM swap event subscription for a phone number
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.sim_swap_subscriptions_v_030 import CreateSimSwapSubscriptionRequestSinkCredential, CreateSimSwapSubscriptionRequestConfig, CreateSimSwapSubscriptionRequestConfigSubscriptionDetail
+import datetime
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.sim_swap_subscriptions_v_030.create_sim_swap_subscription(
+    protocol="HTTP",
+    sink="https://endpoint.example.com/sink",
+    sink_credential=CreateSimSwapSubscriptionRequestSinkCredential(
+        credential_type="ACCESSTOKEN",
+    ),
+    types=[
+        "org.camaraproject.sim-swap-subscriptions.v0.swapped"
+    ],
+    config=CreateSimSwapSubscriptionRequestConfig(
+        subscription_detail=CreateSimSwapSubscriptionRequestConfigSubscriptionDetail(
+            phone_number="+99999991000",
+        ),
+        subscription_expire_time=datetime.datetime.fromisoformat("2025-01-17T13:18:23+00:00"),
+        subscription_max_events=10,
+    ),
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**protocol:** `CreateSimSwapSubscriptionRequestProtocol` — Identifier of a delivery protocol. Only HTTP is supported.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sink:** `str` — The address to which events shall be delivered using the selected protocol.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**types:** `typing.List[CreateSimSwapSubscriptionRequestTypesItem]` 
+
+Camara Event types eligible to be delivered by this subscription.
+Note: For the current Commonalities API design guidelines, only one event type per subscription is allowed, yet in the following releases use of array of event types SHALL be specified without changing this definition.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**config:** `CreateSimSwapSubscriptionRequestConfig` 
+
+Implementation-specific configuration parameters needed by the subscription manager for acquiring events.
+In CAMARA we have predefined attributes like `subscriptionExpireTime`, `subscriptionMaxEvents`, `initialEvent`
+Specific event type attributes must be defined in `subscriptionDetail`
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sink_credential:** `typing.Optional[CreateSimSwapSubscriptionRequestSinkCredential]` — A sink credential provides authentication or authorization information necessary to enable delivery of events to a target.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+## Qod
+<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">extend_session_v1</a>(...) -> ExtendSessionV1QodResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Extend the overall duration of an active QoS session. If this operation is executed successfully, the new duration of the target session will be the original duration plus the additionally requested duration.
+The new remaining duration of the QoS session shall not exceed the maximum remaining duration limit (currently fixed at 86,400 seconds) where the remaining duration is calculated as the difference between the `expiresAt` and current time when the request to extend the session duration is received. If this maximum limit would be exceeded, the overall duration shall be set such that the remaining duration is equal to this limit.
+An example: A QoD session was originally created with duration 80,000 seconds. 10,000 seconds later, the developer requested to extend the session by 20,000 seconds.
+- Original duration: 80,000 seconds
+- Elapsed time: 10,000 seconds
+- Remaining duration: 70,000 seconds
+- New remaining duration: 86,400 seconds (the maximum allowed)
+- New overall session duration: 96,400 seconds
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.qod.extend_session_v_1(
+    session_id="sessionId",
+    requested_additional_duration=60,
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**session_id:** `str` — Session ID that was obtained from the createSession operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requested_additional_duration:** `int` — Additional duration in seconds to be extended.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">create_session</a>(...) -> CreateSessionQodResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Create QoS Session to manage latency/throughput priorities
+
+If the qosStatus in the API response is "AVAILABLE" and a notification callback is provided the client will receive in addition to the response a
+`QOS_STATUS_CHANGED` event notification with `qosStatus` as `AVAILABLE`.
+
+If the `qosStatus` in the API response is `REQUESTED`, the client will receive either
+- a `QOS_STATUS_CHANGED` event notification with `qosStatus` as `AVAILABLE` after the network notifies that it has created the requested session, or
+- a `QOS_STATUS_CHANGED` event notification with `qosStatus` as `UNAVAILABLE` and `statusInfo` as `NETWORK_TERMINATED` after the network notifies that it has failed to provide the requested session.
+
+A `QOS_STATUS_CHANGED` event notification with `qosStatus` as `UNAVAILABLE` will also be send if the network terminates the session before the requested duration expired
+
+NOTE: in case of a `QOS_STATUS_CHANGED` event with `qosStatus` as `UNAVAILABLE` and `statusInfo` as `NETWORK_TERMINATED` the resources of the QoS session
+are not directly released, but will get deleted automatically at earliest 360 seconds after the event.
+This behavior allows clients which are not receiving notification events but are polling to get the session information with
+the `qosStatus` `UNAVAILABLE` (the `statusInfo` parameter is not included in the current version but will be adding to `SessionInfo` in an upcoming release). Before a client can attempt to create a new QoD session
+for the same device and flow period they must release the session resources with an explicit `delete` operation if not yet automatically deleted.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.qod import CreateSessionQodRequestDevice, CreateSessionQodRequestApplicationServer
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.qod.create_session(
+    device=CreateSessionQodRequestDevice(
+        phone_number="+99999991001",
+        ipv_4_address={"publicAddress": "233.252.0.2", "privateAddress": "192.0.2.25", "publicPort": 80},
+    ),
+    application_server=CreateSessionQodRequestApplicationServer(
+        ipv_4_address="8.8.8.8",
+    ),
+    qos_profile="DOWNLINK_M_UPLINK_L",
+    duration=60,
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**device:** `CreateSessionQodRequestDevice` 
+
+End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
+
+The developer can choose to provide the below specified device identifiers:
+
+* `ipv4Address`
+* `ipv6Address`
+* `phoneNumber`
+* `networkAccessIdentifier`
+
+NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**application_server:** `CreateSessionQodRequestApplicationServer` 
+
+A server hosting backend applications to deliver some business logic to clients.
+
+The developer can choose to provide the below specified device identifiers:
+
+* `ipv4Address`
+* `ipv6Address`
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**qos_profile:** `str` 
+
+A unique name for identifying a specific QoS profile.
+This may follow different formats depending on the service providers implementation.
+Some options addresses:
+
+  - A UUID style string
+  - Support for predefined profiles QOS_S, QOS_M, QOS_L, and QOS_E
+  - A searchable descriptive name
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**device_ports:** `typing.Optional[CreateSessionQodRequestDevicePorts]` — The ports used locally by the device for flows to which the requested QoS profile should apply. If omitted, then the qosProfile will apply to all flows between the device and the specified application server address and ports
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**application_server_ports:** `typing.Optional[CreateSessionQodRequestApplicationServerPorts]` — A list of single ports or port ranges on the application server
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**webhook:** `typing.Optional[CreateSessionQodRequestWebhook]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**duration:** `typing.Optional[int]` 
+
+Session duration in seconds. Maximal value of 24 hours is used if not set.
+After session is expired the, client will receive a `QOS_STATUS_CHANGED` event with
+- `qosStatus` as `UNAVAILABLE`, and,
+- `statusInfo` as `DURATION_EXPIRED`.
+See notification callback.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">get_session</a>(...) -> GetSessionQodResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Querying for QoS session resource information details
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.qod.get_session(
+    session_id="sessionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**session_id:** `str` — Session ID that was obtained from the createSession operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">delete_session</a>(...)</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Release resources related to QoS session
+
+If the notification callback is provided and the `qosStatus` of the session was `AVAILABLE` the client will receive in addition to the response a `QOS_STATUS_CHANGED` event with
+- `qosStatus` as `UNAVAILABLE` and
+- `statusInfo` as `DELETE_REQUESTED`
+There will be no notification event if the `qosStatus` was already `UNAVAILABLE`.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.qod.delete_session(
+    session_id="sessionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**session_id:** `str` — Session ID that was obtained from the createSession operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">retrieve_sessions</a>(...) -> typing.List[RetrieveSessionsQodResponseItem]</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Return all QoD sessions related to the specified device.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.qod import RetrieveSessionsQodRequestDevice
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.qod.retrieve_sessions(
+    device=RetrieveSessionsQodRequestDevice(
+        phone_number="+99999991001",
+    ),
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**device:** `RetrieveSessionsQodRequestDevice` 
+
+End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
+
+The developer can choose to provide the below specified device identifiers:
+
+* `ipv4Address`
+* `ipv6Address`
+* `phoneNumber`
+* `networkAccessIdentifier`
+
+NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">extend_session</a>(...) -> ExtendSessionQodResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Extend the overall duration of an active QoS session. If this operation is executed successfully, the new duration of the target session will be the original duration plus the additionally requested duration.
+The new remaining duration of the QoS session shall not exceed the maximum remaining duration limit (currently fixed at 86,400 seconds) where the remaining duration is calculated as the difference between the `expiresAt` and current time when the request to extend the session duration is received. If this maximum limit would be exceeded, the overall duration shall be set such that the remaining duration is equal to this limit.
+An example: A QoD session was originally created with duration 80,000 seconds. 10,000 seconds later, the developer requested to extend the session by 20,000 seconds.
+- Original duration: 80,000 seconds
+- Elapsed time: 10,000 seconds
+- Remaining duration: 70,000 seconds
+- New remaining duration: 86,400 seconds (the maximum allowed)
+- New overall session duration: 96,400 seconds
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.qod.extend_session(
+    session_id="sessionId",
+    requested_additional_duration=60,
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**session_id:** `str` — Session ID that was obtained from the createSession operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requested_additional_duration:** `int` — Additional duration in seconds to be extended.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">get_session_v1</a>(...) -> GetSessionV1QodResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Querying for QoS session resource information details
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.qod.get_session_v_1(
+    session_id="sessionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**session_id:** `str` — Session ID that was obtained from the createSession operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">delete_session_v1</a>(...)</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Release resources related to QoS session
+
+If the notification callback is provided and the `qosStatus` of the session was `AVAILABLE` the client will receive in addition to the response a `QOS_STATUS_CHANGED` event with
+- `qosStatus` as `UNAVAILABLE` and
+- `statusInfo` as `DELETE_REQUESTED`
+There will be no notification event if the `qosStatus` was already `UNAVAILABLE`.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.qod.delete_session_v_1(
+    session_id="sessionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**session_id:** `str` — Session ID that was obtained from the createSession operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">create_session_v1</a>(...) -> CreateSessionV1QodResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Create QoS Session to manage latency/throughput priorities
+
+If the qosStatus in the API response is "AVAILABLE" and a notification callback is provided the API consumer will receive in addition to the response a
+`QOS_STATUS_CHANGED` event notification with `qosStatus` as `AVAILABLE`.
+
+If the `qosStatus` in the API response is `REQUESTED`, the client will receive either
+- a `QOS_STATUS_CHANGED` event notification with `qosStatus` as `AVAILABLE` after the network notifies that it has created the requested session, or
+- a `QOS_STATUS_CHANGED` event notification with `qosStatus` as `UNAVAILABLE` and `statusInfo` as `NETWORK_TERMINATED` after the network notifies that it has failed to provide the requested session.
+
+A `QOS_STATUS_CHANGED` event notification with `qosStatus` as `UNAVAILABLE` will also be send if the network terminates the session before the requested duration expired
+
+NOTE: in case of a `QOS_STATUS_CHANGED` event with `qosStatus` as `UNAVAILABLE` and `statusInfo` as `NETWORK_TERMINATED` the resources of the QoS session
+are not directly released, but will get deleted automatically at earliest 360 seconds after the event.
+This behavior allows clients which are not receiving notification events but are polling to get the session information with
+the `qosStatus` `UNAVAILABLE` (the `statusInfo` parameter is not included in the current version but will be adding to `SessionInfo` in an upcoming release). Before a client can attempt to create a new QoD session
+for the same device and flow period they must release the session resources with an explicit `delete` operation if not yet automatically deleted.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.qod import CreateSessionV1QodRequestDevice, CreateSessionV1QodRequestApplicationServer
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.qod.create_session_v_1(
+    device=CreateSessionV1QodRequestDevice(
+        phone_number="+99999991001",
+        ipv_4_address={"publicAddress": "233.252.0.2", "privateAddress": "192.0.2.25", "publicPort": 80},
+    ),
+    application_server=CreateSessionV1QodRequestApplicationServer(
+        ipv_4_address="8.8.8.8",
+    ),
+    qos_profile="DOWNLINK_M_UPLINK_L",
+    duration=60,
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**application_server:** `CreateSessionV1QodRequestApplicationServer` 
+
+A server hosting backend applications to deliver some business logic to clients.
+
+The developer can choose to provide the below specified device identifiers:
+
+* `ipv4Address`
+* `ipv6Address`
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**qos_profile:** `str` 
+
+A unique name for identifying a specific QoS profile.
+This may follow different formats depending on the service providers implementation.
+Some options addresses:
+
+  - A UUID style string
+  - Support for predefined profiles QOS_S, QOS_M, QOS_L, and QOS_E
+  - A searchable descriptive name
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**device:** `typing.Optional[CreateSessionV1QodRequestDevice]` 
+
+End-user equipment able to connect to a network. Examples of devices include smartphones or IoT sensors/actuators.
+
+The developer can choose to provide the below specified device identifiers:
+
+* `ipv4Address`
+* `ipv6Address`
+* `phoneNumber`
+* `networkAccessIdentifier`
+
+NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**device_ports:** `typing.Optional[CreateSessionV1QodRequestDevicePorts]` — The ports used locally by the device for flows to which the requested QoS profile should apply. If omitted, then the qosProfile will apply to all flows between the device and the specified application server address and ports
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**application_server_ports:** `typing.Optional[CreateSessionV1QodRequestApplicationServerPorts]` — A list of single ports or port ranges on the application server
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sink:** `typing.Optional[str]` — The address to which events about all status changes of the session (e.g. session termination) shall be delivered using the selected protocol.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sink_credential:** `typing.Optional[CreateSessionV1QodRequestSinkCredential]` — A sink credential provides authentication or authorization information necessary to enable delivery of events to a target.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**duration:** `typing.Optional[int]` 
+
+Session duration in seconds. Maximal value of 24 hours is used if not set.
+After session is expired the, client will receive a `QOS_STATUS_CHANGED` event with
+- `qosStatus` as `UNAVAILABLE`, and,
+- `statusInfo` as `DURATION_EXPIRED`.
+See notification callback.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">retrieve_sessions_v1</a>(...) -> typing.List[RetrieveSessionsV1QodResponseItem]</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Return all QoD sessions related to the specified device.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.qod import RetrieveSessionsV1QodRequestDevice
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.qod.retrieve_sessions_v_1(
+    device=RetrieveSessionsV1QodRequestDevice(
+        phone_number="+99999991001",
+    ),
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**device:** `RetrieveSessionsV1QodRequestDevice` 
+
+End-user equipment able to connect to a network. Examples of devices include smartphones or IoT sensors/actuators.
+
+The developer can choose to provide the below specified device identifiers:
+
+* `ipv4Address`
+* `ipv6Address`
+* `phoneNumber`
+* `networkAccessIdentifier`
+
+NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+## NaC Authorization Server
+<details><summary><code>client.na_c_authorization_server.<a href="src/networkAsCode/na_c_authorization_server/client.py">fill_openid4vp_auth_openid4vp_post</a>(...) -> FillOpenid4VpAuthOpenid4VpPostResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Accepts incomplete OpenID4VP request; returns it with credential_authorization_jwt filled.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.na_c_authorization_server import FillOpenid4VpAuthOpenid4VpPostRequestDcqlQuery, FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryCredentialsItem
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.na_c_authorization_server.fill_openid_4_vp_auth_openid_4_vp_post(
+    nonce="",
+    state="",
+    dcql_query=FillOpenid4VpAuthOpenid4VpPostRequestDcqlQuery(
+        credentials=[
+            FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryCredentialsItem(
+                format="",
+                id="",
+                meta={
+                    "key": "value"
+                },
+            )
+        ],
+    ),
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**nonce:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**state:** `typing.Optional[str]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**dcql_query:** `typing.Optional[FillOpenid4VpAuthOpenid4VpPostRequestDcqlQuery]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.na_c_authorization_server.<a href="src/networkAsCode/na_c_authorization_server/client.py">get_jwks</a>(...) -> typing.Any</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+ 
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.na_c_authorization_server.get_jwks(
+    nac_app_ref="nac_app_ref",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**nac_app_ref:** `str` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+## Geofencing
+<details><summary><code>client.geofencing.<a href="src/networkAsCode/geofencing/client.py">list_subscriptions</a>(...) -> typing.List[ListSubscriptionsGeofencingResponseItem]</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a list of geofencing event subscription(s)
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.geofencing.list_subscriptions()
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[str]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.geofencing.<a href="src/networkAsCode/geofencing/client.py">create_subscription</a>(...) -> CreateSubscriptionGeofencingResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Create a subscription for a device to receive notifications when a device enters or exits a specified area
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+from networkAsCode.geofencing import CreateSubscriptionGeofencingRequestConfig, CreateSubscriptionGeofencingRequestConfigSubscriptionDetail, CreateSubscriptionGeofencingRequestConfigSubscriptionDetailDevice, CreateSubscriptionGeofencingRequestConfigSubscriptionDetailArea
+import datetime
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.geofencing.create_subscription(
+    protocol="HTTP",
+    sink="https://notificationSendServer12.supertelco.com",
+    types=[
+        "org.camaraproject.geofencing-subscriptions.v0.area-entered"
+    ],
+    config=CreateSubscriptionGeofencingRequestConfig(
+        subscription_detail=CreateSubscriptionGeofencingRequestConfigSubscriptionDetail(
+            device=CreateSubscriptionGeofencingRequestConfigSubscriptionDetailDevice(
+                phone_number="+99999991000",
+            ),
+            area=CreateSubscriptionGeofencingRequestConfigSubscriptionDetailArea(
+                area_type="CIRCLE",
+            ),
+        ),
+        subscription_expire_time=datetime.datetime.fromisoformat("2045-03-22T05:40:58+00:00"),
+        subscription_max_events=10,
+        initial_event=True,
+    ),
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**protocol:** `CreateSubscriptionGeofencingRequestProtocol` — Identifier of a delivery protocol. Only HTTP is allowed for now
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sink:** `str` — The address to which events shall be delivered using the selected protocol.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**types:** `typing.List[CreateSubscriptionGeofencingRequestTypesItem]` 
+
+Camara Event types eligible to be delivered by this subscription.
+Note: As of now we enforce to have only event type per subscription.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**config:** `CreateSubscriptionGeofencingRequestConfig` 
+
+Implementation-specific configuration parameters needed by the subscription manager for acquiring events.
+In CAMARA we have predefined attributes like `subscriptionExpireTime`, `subscriptionMaxEvents`, `initialEvent`
+Specific event type attributes must be defined in `subscriptionDetail`
+Note: if a request is performed for several event type, all subscribed event will use same `config` parameters.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[str]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**sink_credential:** `typing.Optional[CreateSubscriptionGeofencingRequestSinkCredential]` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.geofencing.<a href="src/networkAsCode/geofencing/client.py">get_subscription</a>(...) -> GetSubscriptionGeofencingResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+retrieve Geofencing subscription information for a given subscription ID.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.geofencing.get_subscription(
+    subscription_id="subscriptionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[str]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.geofencing.<a href="src/networkAsCode/geofencing/client.py">delete_subscription</a>(...) -> typing.Optional[DeleteSubscriptionGeofencingResponse]</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+delete a given Geofencing subscription.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.geofencing.delete_subscription(
+    subscription_id="subscriptionId",
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[str]` — Correlation id for the different services
+    
+</dd>
+</dl>
 
 <dl>
 <dd>
@@ -3473,8 +6226,8 @@ client.congestion_insights.query(
 </dl>
 </details>
 
-## SimSwap
-<details><summary><code>client.sim_swap.<a href="src/networkAsCode/sim_swap/client.py">check</a>(...) -> CheckSimSwapResponse</code></summary>
+## Number Verification v1.0.0
+<details><summary><code>client.number_verification_v100.<a href="src/networkAsCode/number_verification_v100/client.py">phone_number_share</a>(...) -> PhoneNumberShareResponse</code></summary>
 <dl>
 <dd>
 
@@ -3486,7 +6239,9 @@ client.congestion_insights.query(
 <dl>
 <dd>
 
-Check if SIM swap has been performed during a past period
+Returns the phone number so the API clients can verify the number themselves:
+- It will be done for the user that has authenticated via mobile network
+- It returns the authenticated user's `device phone number` associated to the access token
 </dd>
 </dl>
 </dd>
@@ -3509,10 +6264,7 @@ client = NetworkAsCodeApi(
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.sim_swap.check(
-    phone_number="+99999991000",
-    max_age=240,
-)
+client.number_verification_v_100.phone_number_share()
 
 ```
 </dd>
@@ -3528,7 +6280,7 @@ client.sim_swap.check(
 <dl>
 <dd>
 
-**correlator:** `typing.Optional[str]` — Correlation id for the different services
+**state:** `typing.Optional[str]` — Application state
     
 </dd>
 </dl>
@@ -3536,83 +6288,10 @@ client.sim_swap.check(
 <dl>
 <dd>
 
-**phone_number:** `typing.Optional[str]` — A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+**code:** `typing.Optional[str]` — Authorization code received from the CSP
     
 </dd>
 </dl>
-
-<dl>
-<dd>
-
-**max_age:** `typing.Optional[int]` — Period in hours to be checked for SIM swap.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.sim_swap.<a href="src/networkAsCode/sim_swap/client.py">retrieve_date</a>(...) -> RetrieveDateSimSwapResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Get timestamp of last SIM swap event for a mobile user account provided with phone number.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.sim_swap.retrieve_date(
-    phone_number="+99999991000",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
 
 <dl>
 <dd>
@@ -3625,7 +6304,7 @@ client.sim_swap.retrieve_date(
 <dl>
 <dd>
 
-**phone_number:** `typing.Optional[str]` — A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+**authorization:** `typing.Optional[str]` — authorization header for token
     
 </dd>
 </dl>
@@ -3646,6 +6325,106 @@ client.sim_swap.retrieve_date(
 </details>
 
 ## Kyc
+<details><summary><code>client.kyc.<a href="src/networkAsCode/kyc/client.py">check_tenure</a>(...) -> CheckTenureKycResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Verifies a specified length of tenure, based on a provided date, for a network subscriber to establish a level of trust for the network subscription identifier.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+import datetime
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.kyc.check_tenure(
+    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
+    phone_number="+99999991000",
+    tenure_date=datetime.date.fromisoformat("2023-07-03"),
+)
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Literal` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**tenure_date:** `datetime.date` — The date, in RFC 3339 / ISO 8601 compliant format "YYYY-MM-DD", from which continuous tenure of the identified network subscriber is required to be confirmed
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**authorization:** `typing.Optional[str]` — authorization header for token
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**phone_number:** `typing.Optional[str]` — A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.kyc.<a href="src/networkAsCode/kyc/client.py">verify_age</a>(...) -> VerifyAgeKycResponse</code></summary>
 <dl>
 <dd>
@@ -3840,7 +6619,7 @@ client.kyc.verify_age(
 </dl>
 </details>
 
-<details><summary><code>client.kyc.<a href="src/networkAsCode/kyc/client.py">check_tenure</a>(...) -> CheckTenureKycResponse</code></summary>
+<details><summary><code>client.kyc.<a href="src/networkAsCode/kyc/client.py">fill_in</a>(...) -> FillInKycResponse</code></summary>
 <dl>
 <dd>
 
@@ -3852,7 +6631,7 @@ client.kyc.verify_age(
 <dl>
 <dd>
 
-Verifies a specified length of tenure, based on a provided date, for a network subscriber to establish a level of trust for the network subscription identifier.
+ 
 </dd>
 </dl>
 </dd>
@@ -3869,17 +6648,14 @@ Verifies a specified length of tenure, based on a provided date, for a network s
 ```python
 from networkAsCode import NetworkAsCodeApi
 from networkAsCode.environment import NetworkascodeApiEnvironment
-import datetime
 
 client = NetworkAsCodeApi(
     api_key="<value>",
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.kyc.check_tenure(
-    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
+client.kyc.fill_in(
     phone_number="+99999991000",
-    tenure_date=datetime.date.fromisoformat("2023-07-03"),
 )
 
 ```
@@ -3896,23 +6672,15 @@ client.kyc.check_tenure(
 <dl>
 <dd>
 
-**correlator:** `typing.Literal` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**tenure_date:** `datetime.date` — The date, in RFC 3339 / ISO 8601 compliant format "YYYY-MM-DD", from which continuous tenure of the identified network subscriber is required to be confirmed
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
 **authorization:** `typing.Optional[str]` — authorization header for token
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
     
 </dd>
 </dl>
@@ -3960,12 +6728,12 @@ In order to proceed with the match check, some Operators may have the requiremen
 
 The API will return the result of the matching process for each requested attribute. This means that the response will **only** contain the attributes for which validation has been requested. Possible values are:
 
+  - **true**: the attribute provided matches with the one in the Operator
+systems.
 
+  - **false**: the attribute provided does not match with the one in the Operator
+systems.
 
-
-
-  - **true**: the attribute provided matches with the one in the Operator systems.
-  - **false**: the attribute provided does not match with the one in the Operator systems.
   - **not_available**: the attribute is not available to validate.
 </dd>
 </dl>
@@ -3994,24 +6762,19 @@ client.kyc.match(
     correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
     phone_number="+99999991000",
     id_document="66666666q",
-    name="Federica Sanchez Arjona",
-    given_name="Federica",
-    family_name="Sanchez Arjona",
-    name_kana_hankaku="federica",
-    name_kana_zenkaku="Ｆｅｄｅｒｉｃａ",
-    middle_names="Sanchez",
-    family_name_at_birth="YYYY",
-    address="Tokyo-to Chiyoda-ku Iidabashi 3-10-10",
-    street_name="Nicolas Salmeron",
-    street_number="4",
-    postal_code="1028460",
-    region="Tokyo",
-    locality="ZZZZ",
-    country="JP",
-    house_number_extension="VVVV",
-    birthdate=datetime.date.fromisoformat("1978-08-22"),
-    email="abc@example.com",
-    gender="OTHER",
+    name="Anna Zoltan",
+    given_name="Zoltan",
+    family_name="Eszter",
+    family_name_at_birth="1994",
+    address="Budapest, Bókay János u. 36-42, 1083 Hungary",
+    street_name="Bókay János u",
+    street_number="36-42",
+    postal_code="1083",
+    region="Budapest",
+    locality="Budapest, Bókay János u. 36-42, 1080 Hungary",
+    country="HU",
+    birthdate=datetime.date.fromisoformat("1995-03-12"),
+    email="device@testcsp.com",
 )
 
 ```
@@ -4216,7 +6979,8 @@ client.kyc.match(
 </dl>
 </details>
 
-<details><summary><code>client.kyc.<a href="src/networkAsCode/kyc/client.py">fill_in</a>(...) -> FillInKycResponse</code></summary>
+## SimSwap
+<details><summary><code>client.sim_swap.<a href="src/networkAsCode/sim_swap/client.py">retrieve_date</a>(...) -> RetrieveDateSimSwapResponse</code></summary>
 <dl>
 <dd>
 
@@ -4228,7 +6992,7 @@ client.kyc.match(
 <dl>
 <dd>
 
- 
+Get timestamp of last SIM swap event for a mobile user account provided with phone number.
 </dd>
 </dl>
 </dd>
@@ -4251,7 +7015,7 @@ client = NetworkAsCodeApi(
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.kyc.fill_in(
+client.sim_swap.retrieve_date(
     phone_number="+99999991000",
 )
 
@@ -4269,15 +7033,7 @@ client.kyc.fill_in(
 <dl>
 <dd>
 
-**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**authorization:** `typing.Optional[str]` — authorization header for token
+**correlator:** `typing.Optional[str]` — Correlation id for the different services
     
 </dd>
 </dl>
@@ -4305,8 +7061,7 @@ client.kyc.fill_in(
 </dl>
 </details>
 
-## Qod
-<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">get_session_v1</a>(...) -> GetSessionV1QodResponse</code></summary>
+<details><summary><code>client.sim_swap.<a href="src/networkAsCode/sim_swap/client.py">check</a>(...) -> CheckSimSwapResponse</code></summary>
 <dl>
 <dd>
 
@@ -4318,7 +7073,7 @@ client.kyc.fill_in(
 <dl>
 <dd>
 
-Querying for QoS session resource information details
+Check if SIM swap has been performed during a past period
 </dd>
 </dl>
 </dd>
@@ -4341,8 +7096,9 @@ client = NetworkAsCodeApi(
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.qod.get_session_v_1(
-    session_id="sessionId",
+client.sim_swap.check(
+    phone_number="+99999991000",
+    max_age=240,
 )
 
 ```
@@ -4359,7 +7115,23 @@ client.qod.get_session_v_1(
 <dl>
 <dd>
 
-**session_id:** `str` — Session ID that was obtained from the createSession operation
+**correlator:** `typing.Optional[str]` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**phone_number:** `typing.Optional[str]` — A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**max_age:** `typing.Optional[int]` — Period in hours to be checked for SIM swap.
     
 </dd>
 </dl>
@@ -4379,7 +7151,8 @@ client.qod.get_session_v_1(
 </dl>
 </details>
 
-<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">delete_session_v1</a>(...)</code></summary>
+## CallForwardingSignal
+<details><summary><code>client.call_forwarding_signal.<a href="src/networkAsCode/call_forwarding_signal/client.py">retrieve_call_forwarding</a>(...) -> typing.List[RetrieveCallForwardingCallForwardingSignalResponseItem]</code></summary>
 <dl>
 <dd>
 
@@ -4391,12 +7164,7 @@ client.qod.get_session_v_1(
 <dl>
 <dd>
 
-Release resources related to QoS session
-
-If the notification callback is provided and the `qosStatus` of the session was `AVAILABLE` the client will receive in addition to the response a `QOS_STATUS_CHANGED` event with
-- `qosStatus` as `UNAVAILABLE` and
-- `statusInfo` as `DELETE_REQUESTED`
-There will be no notification event if the `qosStatus` was already `UNAVAILABLE`.
+This endpoint provides information about wich type of call forwarding service is active. More than one service can be active, e.g. conditional and unconditional. This endpoit exceeds the main scope of the CFS API, for this reason an error code 501 can be returned.
 </dd>
 </dl>
 </dd>
@@ -4419,8 +7187,9 @@ client = NetworkAsCodeApi(
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.qod.delete_session_v_1(
-    session_id="sessionId",
+client.call_forwarding_signal.retrieve_call_forwarding(
+    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
+    phone_number="+99999991111",
 )
 
 ```
@@ -4437,7 +7206,15 @@ client.qod.delete_session_v_1(
 <dl>
 <dd>
 
-**session_id:** `str` — Session ID that was obtained from the createSession operation
+**correlator:** `typing.Literal` — Correlation id for the different services
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**phone_number:** `typing.Optional[str]` — A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
     
 </dd>
 </dl>
@@ -4457,7 +7234,7 @@ client.qod.delete_session_v_1(
 </dl>
 </details>
 
-<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">list_sessions_v1</a>() -> typing.List[ListSessionsV1QodResponseItem]</code></summary>
+<details><summary><code>client.call_forwarding_signal.<a href="src/networkAsCode/call_forwarding_signal/client.py">retrieve_unconditional_call_forwarding</a>(...) -> RetrieveUnconditionalCallForwardingCallForwardingSignalResponse</code></summary>
 <dl>
 <dd>
 
@@ -4469,7 +7246,7 @@ client.qod.delete_session_v_1(
 <dl>
 <dd>
 
-Return device communication Quality-on-Demand settings for your devices.
+This endpoint provides information about the status of the unconditional call forwarding, beeing active or not.
 </dd>
 </dl>
 </dd>
@@ -4492,95 +7269,9 @@ client = NetworkAsCodeApi(
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.qod.list_sessions_v_1()
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">create_session_v1</a>(...) -> CreateSessionV1QodResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Create QoS Session to manage latency/throughput priorities
-
-If the qosStatus in the API response is "AVAILABLE" and a notification callback is provided the API consumer will receive in addition to the response a
-`QOS_STATUS_CHANGED` event notification with `qosStatus` as `AVAILABLE`.
-
-If the `qosStatus` in the API response is `REQUESTED`, the client will receive either
-- a `QOS_STATUS_CHANGED` event notification with `qosStatus` as `AVAILABLE` after the network notifies that it has created the requested session, or
-- a `QOS_STATUS_CHANGED` event notification with `qosStatus` as `UNAVAILABLE` and `statusInfo` as `NETWORK_TERMINATED` after the network notifies that it has failed to provide the requested session.
-
-A `QOS_STATUS_CHANGED` event notification with `qosStatus` as `UNAVAILABLE` will also be send if the network terminates the session before the requested duration expired
-
-NOTE: in case of a `QOS_STATUS_CHANGED` event with `qosStatus` as `UNAVAILABLE` and `statusInfo` as `NETWORK_TERMINATED` the resources of the QoS session
-are not directly released, but will get deleted automatically at earliest 360 seconds after the event.
-This behavior allows clients which are not receiving notification events but are polling to get the session information with
-the `qosStatus` `UNAVAILABLE` (the `statusInfo` parameter is not included in the current version but will be adding to `SessionInfo` in an upcoming release). Before a client can attempt to create a new QoD session
-for the same device and flow period they must release the session resources with an explicit `delete` operation if not yet automatically deleted.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-from networkAsCode.qod import CreateSessionV1QodRequestDevice, CreateSessionV1QodRequestApplicationServer
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.qod.create_session_v_1(
-    device=CreateSessionV1QodRequestDevice(
-        phone_number="+99999991001",
-        ipv_4_address={"publicAddress": "233.252.0.2", "privateAddress": "192.0.2.25", "publicPort": 80},
-    ),
-    application_server=CreateSessionV1QodRequestApplicationServer(
-        ipv_4_address="8.8.8.8",
-    ),
-    qos_profile="DOWNLINK_M_UPLINK_L",
-    duration=60,
+client.call_forwarding_signal.retrieve_unconditional_call_forwarding(
+    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
+    phone_number="+99999991000",
 )
 
 ```
@@ -4597,14 +7288,7 @@ client.qod.create_session_v_1(
 <dl>
 <dd>
 
-**application_server:** `CreateSessionV1QodRequestApplicationServer` 
-
-A server hosting backend applications to deliver some business logic to clients.
-
-The developer can choose to provide the below specified device identifiers:
-
-* `ipv4Address`
-* `ipv6Address`
+**correlator:** `typing.Literal` — Correlation id for the different services
     
 </dd>
 </dl>
@@ -4612,84 +7296,7 @@ The developer can choose to provide the below specified device identifiers:
 <dl>
 <dd>
 
-**qos_profile:** `str` 
-
-A unique name for identifying a specific QoS profile.
-This may follow different formats depending on the service providers implementation.
-Some options addresses:
-
-
-
-
-
-  - A UUID style string
-  - Support for predefined profiles QOS_S, QOS_M, QOS_L, and QOS_E
-  - A searchable descriptive name
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**device:** `typing.Optional[CreateSessionV1QodRequestDevice]` 
-
-End-user equipment able to connect to a network. Examples of devices include smartphones or IoT sensors/actuators.
-
-The developer can choose to provide the below specified device identifiers:
-
-* `ipv4Address`
-* `ipv6Address`
-* `phoneNumber`
-* `networkAccessIdentifier`
-
-NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**device_ports:** `typing.Optional[CreateSessionV1QodRequestDevicePorts]` — The ports used locally by the device for flows to which the requested QoS profile should apply. If omitted, then the qosProfile will apply to all flows between the device and the specified application server address and ports
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**application_server_ports:** `typing.Optional[CreateSessionV1QodRequestApplicationServerPorts]` — A list of single ports or port ranges on the application server
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**sink:** `typing.Optional[str]` — The address to which events about all status changes of the session (e.g. session termination) shall be delivered using the selected protocol.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**sink_credential:** `typing.Optional[CreateSessionV1QodRequestSinkCredential]` — A sink credential provides authentication or authorization information necessary to enable delivery of events to a target.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**duration:** `typing.Optional[int]` 
-
-Session duration in seconds. Maximal value of 24 hours is used if not set.
-After session is expired the, client will receive a `QOS_STATUS_CHANGED` event with
-- `qosStatus` as `UNAVAILABLE`, and,
-- `statusInfo` as `DURATION_EXPIRED`.
-See notification callback.
+**phone_number:** `typing.Optional[str]` — A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
     
 </dd>
 </dl>
@@ -4709,7 +7316,8 @@ See notification callback.
 </dl>
 </details>
 
-<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">list_sessions</a>() -> typing.List[ListSessionsQodResponseItem]</code></summary>
+## NumberRecycling
+<details><summary><code>client.number_recycling.<a href="src/networkAsCode/number_recycling/client.py">check</a>(...) -> CheckNumberRecyclingResponse</code></summary>
 <dl>
 <dd>
 
@@ -4721,7 +7329,7 @@ See notification callback.
 <dl>
 <dd>
 
-Return device communication Quality-on-Demand settings for your devices.
+Check whether the subscriber of the phone number has changed.
 </dd>
 </dl>
 </dd>
@@ -4738,101 +7346,16 @@ Return device communication Quality-on-Demand settings for your devices.
 ```python
 from networkAsCode import NetworkAsCodeApi
 from networkAsCode.environment import NetworkascodeApiEnvironment
+import datetime
 
 client = NetworkAsCodeApi(
     api_key="<value>",
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.qod.list_sessions()
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">create_session</a>(...) -> CreateSessionQodResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Create QoS Session to manage latency/throughput priorities
-
-If the qosStatus in the API response is "AVAILABLE" and a notification callback is provided the client will receive in addition to the response a
-`QOS_STATUS_CHANGED` event notification with `qosStatus` as `AVAILABLE`.
-
-If the `qosStatus` in the API response is `REQUESTED`, the client will receive either
-- a `QOS_STATUS_CHANGED` event notification with `qosStatus` as `AVAILABLE` after the network notifies that it has created the requested session, or
-- a `QOS_STATUS_CHANGED` event notification with `qosStatus` as `UNAVAILABLE` and `statusInfo` as `NETWORK_TERMINATED` after the network notifies that it has failed to provide the requested session.
-
-A `QOS_STATUS_CHANGED` event notification with `qosStatus` as `UNAVAILABLE` will also be send if the network terminates the session before the requested duration expired
-
-NOTE: in case of a `QOS_STATUS_CHANGED` event with `qosStatus` as `UNAVAILABLE` and `statusInfo` as `NETWORK_TERMINATED` the resources of the QoS session
-are not directly released, but will get deleted automatically at earliest 360 seconds after the event.
-This behavior allows clients which are not receiving notification events but are polling to get the session information with
-the `qosStatus` `UNAVAILABLE` (the `statusInfo` parameter is not included in the current version but will be adding to `SessionInfo` in an upcoming release). Before a client can attempt to create a new QoD session
-for the same device and flow period they must release the session resources with an explicit `delete` operation if not yet automatically deleted.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-from networkAsCode.qod import CreateSessionQodRequestDevice, CreateSessionQodRequestApplicationServer
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.qod.create_session(
-    device=CreateSessionQodRequestDevice(
-        phone_number="+99999991001",
-        ipv_4_address={"publicAddress": "233.252.0.2", "privateAddress": "192.0.2.25", "publicPort": 80},
-    ),
-    application_server=CreateSessionQodRequestApplicationServer(
-        ipv_4_address="8.8.8.8",
-    ),
-    qos_profile="DOWNLINK_M_UPLINK_L",
-    duration=60,
+client.number_recycling.check(
+    phone_number="+99999991000",
+    specified_date=datetime.date.fromisoformat("2024-10-31"),
 )
 
 ```
@@ -4849,18 +7372,7 @@ client.qod.create_session(
 <dl>
 <dd>
 
-**device:** `CreateSessionQodRequestDevice` 
-
-End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
-
-The developer can choose to provide the below specified device identifiers:
-
-* `ipv4Address`
-* `ipv6Address`
-* `phoneNumber`
-* `networkAccessIdentifier`
-
-NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device
+**specified_date:** `datetime.date` — Specified date to check whether there has been a change in the subscriber associated with the specific phone number, in RFC 3339 calendar date format (YYYY-MM-DD).
     
 </dd>
 </dl>
@@ -4868,14 +7380,7 @@ NOTE: the MNO might support only a subset of these options. The API invoker can 
 <dl>
 <dd>
 
-**application_server:** `CreateSessionQodRequestApplicationServer` 
-
-A server hosting backend applications to deliver some business logic to clients.
-
-The developer can choose to provide the below specified device identifiers:
-
-* `ipv4Address`
-* `ipv6Address`
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
     
 </dd>
 </dl>
@@ -4883,19 +7388,7 @@ The developer can choose to provide the below specified device identifiers:
 <dl>
 <dd>
 
-**qos_profile:** `str` 
-
-A unique name for identifying a specific QoS profile.
-This may follow different formats depending on the service providers implementation.
-Some options addresses:
-
-
-
-
-
-  - A UUID style string
-  - Support for predefined profiles QOS_S, QOS_M, QOS_L, and QOS_E
-  - A searchable descriptive name
+**authorization:** `typing.Optional[str]` — authorization header for token
     
 </dd>
 </dl>
@@ -4903,540 +7396,7 @@ Some options addresses:
 <dl>
 <dd>
 
-**device_ports:** `typing.Optional[CreateSessionQodRequestDevicePorts]` — The ports used locally by the device for flows to which the requested QoS profile should apply. If omitted, then the qosProfile will apply to all flows between the device and the specified application server address and ports
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**application_server_ports:** `typing.Optional[CreateSessionQodRequestApplicationServerPorts]` — A list of single ports or port ranges on the application server
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**webhook:** `typing.Optional[CreateSessionQodRequestWebhook]` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**duration:** `typing.Optional[int]` 
-
-Session duration in seconds. Maximal value of 24 hours is used if not set.
-After session is expired the, client will receive a `QOS_STATUS_CHANGED` event with
-- `qosStatus` as `UNAVAILABLE`, and,
-- `statusInfo` as `DURATION_EXPIRED`.
-See notification callback.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">retrieve_sessions_v1</a>(...) -> typing.List[RetrieveSessionsV1QodResponseItem]</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Return all QoD sessions related to the specified device.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-from networkAsCode.qod import RetrieveSessionsV1QodRequestDevice
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.qod.retrieve_sessions_v_1(
-    device=RetrieveSessionsV1QodRequestDevice(
-        phone_number="+99999991001",
-    ),
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**device:** `RetrieveSessionsV1QodRequestDevice` 
-
-End-user equipment able to connect to a network. Examples of devices include smartphones or IoT sensors/actuators.
-
-The developer can choose to provide the below specified device identifiers:
-
-* `ipv4Address`
-* `ipv6Address`
-* `phoneNumber`
-* `networkAccessIdentifier`
-
-NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">extend_session_v1</a>(...) -> ExtendSessionV1QodResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Extend the overall duration of an active QoS session. If this operation is executed successfully, the new duration of the target session will be the original duration plus the additionally requested duration.
-The new remaining duration of the QoS session shall not exceed the maximum remaining duration limit (currently fixed at 86,400 seconds) where the remaining duration is calculated as the difference between the `expiresAt` and current time when the request to extend the session duration is received. If this maximum limit would be exceeded, the overall duration shall be set such that the remaining duration is equal to this limit.
-An example: A QoD session was originally created with duration 80,000 seconds. 10,000 seconds later, the developer requested to extend the session by 20,000 seconds.
-- Original duration: 80,000 seconds
-- Elapsed time: 10,000 seconds
-- Remaining duration: 70,000 seconds
-- New remaining duration: 86,400 seconds (the maximum allowed)
-- New overall session duration: 96,400 seconds
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.qod.extend_session_v_1(
-    session_id="sessionId",
-    requested_additional_duration=60,
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**session_id:** `str` — Session ID that was obtained from the createSession operation
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**requested_additional_duration:** `int` — Additional duration in seconds to be extended.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">extend_session</a>(...) -> ExtendSessionQodResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Extend the overall duration of an active QoS session. If this operation is executed successfully, the new duration of the target session will be the original duration plus the additionally requested duration.
-The new remaining duration of the QoS session shall not exceed the maximum remaining duration limit (currently fixed at 86,400 seconds) where the remaining duration is calculated as the difference between the `expiresAt` and current time when the request to extend the session duration is received. If this maximum limit would be exceeded, the overall duration shall be set such that the remaining duration is equal to this limit.
-An example: A QoD session was originally created with duration 80,000 seconds. 10,000 seconds later, the developer requested to extend the session by 20,000 seconds.
-- Original duration: 80,000 seconds
-- Elapsed time: 10,000 seconds
-- Remaining duration: 70,000 seconds
-- New remaining duration: 86,400 seconds (the maximum allowed)
-- New overall session duration: 96,400 seconds
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.qod.extend_session(
-    session_id="sessionId",
-    requested_additional_duration=60,
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**session_id:** `str` — Session ID that was obtained from the createSession operation
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**requested_additional_duration:** `int` — Additional duration in seconds to be extended.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">get_session</a>(...) -> GetSessionQodResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Querying for QoS session resource information details
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.qod.get_session(
-    session_id="sessionId",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**session_id:** `str` — Session ID that was obtained from the createSession operation
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">delete_session</a>(...)</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Release resources related to QoS session
-
-If the notification callback is provided and the `qosStatus` of the session was `AVAILABLE` the client will receive in addition to the response a `QOS_STATUS_CHANGED` event with
-- `qosStatus` as `UNAVAILABLE` and
-- `statusInfo` as `DELETE_REQUESTED`
-There will be no notification event if the `qosStatus` was already `UNAVAILABLE`.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.qod.delete_session(
-    session_id="sessionId",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**session_id:** `str` — Session ID that was obtained from the createSession operation
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.qod.<a href="src/networkAsCode/qod/client.py">retrieve_sessions</a>(...) -> typing.List[RetrieveSessionsQodResponseItem]</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Return all QoD sessions related to the specified device.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-from networkAsCode.qod import RetrieveSessionsQodRequestDevice
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.qod.retrieve_sessions(
-    device=RetrieveSessionsQodRequestDevice(
-        phone_number="+99999991001",
-    ),
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**device:** `RetrieveSessionsQodRequestDevice` 
-
-End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
-
-The developer can choose to provide the below specified device identifiers:
-
-* `ipv4Address`
-* `ipv6Address`
-* `phoneNumber`
-* `networkAccessIdentifier`
-
-NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device
+**phone_number:** `typing.Optional[str]` — A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
     
 </dd>
 </dl>
@@ -5628,8 +7588,8 @@ client.device_swap.retrieve_date(
 </dl>
 </details>
 
-## Geofencing
-<details><summary><code>client.geofencing.<a href="src/networkAsCode/geofencing/client.py">list_subscriptions</a>(...) -> typing.List[ListSubscriptionsGeofencingResponseItem]</code></summary>
+## Well Known Metadata
+<details><summary><code>client.well_known_metadata.<a href="src/networkAsCode/well_known_metadata/client.py">get_openid_configuration</a>() -> GetOpenidConfigurationWellKnownMetadataResponse</code></summary>
 <dl>
 <dd>
 
@@ -5641,7 +7601,7 @@ client.device_swap.retrieve_date(
 <dl>
 <dd>
 
-Retrieve a list of geofencing event subscription(s)
+ 
 </dd>
 </dl>
 </dd>
@@ -5664,7 +7624,7 @@ client = NetworkAsCodeApi(
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.geofencing.list_subscriptions()
+client.well_known_metadata.get_openid_configuration()
 
 ```
 </dd>
@@ -5676,14 +7636,6 @@ client.geofencing.list_subscriptions()
 
 <dl>
 <dd>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Optional[str]` — Correlation id for the different services
-    
-</dd>
-</dl>
 
 <dl>
 <dd>
@@ -5700,7 +7652,7 @@ client.geofencing.list_subscriptions()
 </dl>
 </details>
 
-<details><summary><code>client.geofencing.<a href="src/networkAsCode/geofencing/client.py">create_subscription</a>(...) -> CreateSubscriptionGeofencingResponse</code></summary>
+<details><summary><code>client.well_known_metadata.<a href="src/networkAsCode/well_known_metadata/client.py">get_oauth_authorization_server</a>() -> GetOauthAuthorizationServerWellKnownMetadataResponse</code></summary>
 <dl>
 <dd>
 
@@ -5712,7 +7664,7 @@ client.geofencing.list_subscriptions()
 <dl>
 <dd>
 
-Create a subscription for a device to receive notifications when a device enters or exits a specified area
+ 
 </dd>
 </dl>
 </dd>
@@ -5729,33 +7681,146 @@ Create a subscription for a device to receive notifications when a device enters
 ```python
 from networkAsCode import NetworkAsCodeApi
 from networkAsCode.environment import NetworkascodeApiEnvironment
-from networkAsCode.geofencing import CreateSubscriptionGeofencingRequestConfig, CreateSubscriptionGeofencingRequestConfigSubscriptionDetail, CreateSubscriptionGeofencingRequestConfigSubscriptionDetailDevice, CreateSubscriptionGeofencingRequestConfigSubscriptionDetailArea
-import datetime
 
 client = NetworkAsCodeApi(
     api_key="<value>",
     environment=NetworkascodeApiEnvironment.DEFAULT,
 )
 
-client.geofencing.create_subscription(
-    protocol="HTTP",
-    sink="https://notificationSendServer12.supertelco.com",
-    types=[
-        "org.camaraproject.geofencing-subscriptions.v0.area-entered"
+client.well_known_metadata.get_oauth_authorization_server()
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.well_known_metadata.<a href="src/networkAsCode/well_known_metadata/client.py">get_security_txt</a>() -> str</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+ 
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.well_known_metadata.get_security_txt()
+
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+## ConsentInfo
+<details><summary><code>client.consent_info.<a href="src/networkAsCode/consent_info/client.py">retrieve</a>(...) -> RetrieveConsentInfoResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Create a request to retrieve the validity status of the API Consumer data processing for a given User, scope(s) and Purpose.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```python
+from networkAsCode import NetworkAsCodeApi
+from networkAsCode.environment import NetworkascodeApiEnvironment
+
+client = NetworkAsCodeApi(
+    api_key="<value>",
+    environment=NetworkascodeApiEnvironment.DEFAULT,
+)
+
+client.consent_info.retrieve(
+    phone_number="+99999991000",
+    scopes=[
+        "location-verification:verify"
     ],
-    config=CreateSubscriptionGeofencingRequestConfig(
-        subscription_detail=CreateSubscriptionGeofencingRequestConfigSubscriptionDetail(
-            device=CreateSubscriptionGeofencingRequestConfigSubscriptionDetailDevice(
-                phone_number="+99999991000",
-            ),
-            area=CreateSubscriptionGeofencingRequestConfigSubscriptionDetailArea(
-                area_type="CIRCLE",
-            ),
-        ),
-        subscription_expire_time=datetime.datetime.fromisoformat("2045-03-22T05:40:58+00:00"),
-        subscription_max_events=10,
-        initial_event=True,
-    ),
+    purpose="dpv:FraudPreventionAndDetection",
+    request_capture_url=False,
 )
 
 ```
@@ -5772,7 +7837,7 @@ client.geofencing.create_subscription(
 <dl>
 <dd>
 
-**protocol:** `CreateSubscriptionGeofencingRequestProtocol` — Identifier of a delivery protocol. Only HTTP is allowed for now
+**scopes:** `typing.List[str]` — List of requested scopes. The scope is a string that represents the access rights that the API Consumer is requesting from the User.
     
 </dd>
 </dl>
@@ -5780,7 +7845,7 @@ client.geofencing.create_subscription(
 <dl>
 <dd>
 
-**sink:** `str` — The address to which events shall be delivered using the selected protocol.
+**purpose:** `str` — The reason for which personal data will be processed by the API Consumer. CAMARA defines a standard set of Purposes which can be used by API Consumers to specify the reason for their intended personal data processing. CAMARA uses the [W3C Data Privacy Vocabulary](https://w3c.github.io/dpv/2.0/dpv/) (DPV) to represent these purposes e.g. `dpv:FraudPreventionAndDetection` or `dpv:RequestedServiceProvision`.
     
 </dd>
 </dl>
@@ -5788,10 +7853,11 @@ client.geofencing.create_subscription(
 <dl>
 <dd>
 
-**types:** `typing.List[CreateSubscriptionGeofencingRequestTypesItem]` 
+**request_capture_url:** `bool` 
 
-Camara Event types eligible to be delivered by this subscription.
-Note: As of now we enforce to have only event type per subscription.
+A boolean flag indicating whether the API Consumer requests API Provider to return a Consent capture URL.
+* `true` - If set to `true` the API will include a `captureUrl` in the response body if applicable.
+* `false` - The API will omit the Consent capture URL from the response.
     
 </dd>
 </dl>
@@ -5799,12 +7865,7 @@ Note: As of now we enforce to have only event type per subscription.
 <dl>
 <dd>
 
-**config:** `CreateSubscriptionGeofencingRequestConfig` 
-
-Implementation-specific configuration parameters needed by the subscription manager for acquiring events.
-In CAMARA we have predefined attributes like `subscriptionExpireTime`, `subscriptionMaxEvents`, `initialEvent`
-Specific event type attributes must be defined in `subscriptionDetail`
-Note: if a request is performed for several event type, all subscribed event will use same `config` parameters.
+**correlator:** `typing.Optional[typing.Any]` — Correlation id for the different services
     
 </dd>
 </dl>
@@ -5812,177 +7873,7 @@ Note: if a request is performed for several event type, all subscribed event wil
 <dl>
 <dd>
 
-**correlator:** `typing.Optional[str]` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**sink_credential:** `typing.Optional[CreateSubscriptionGeofencingRequestSinkCredential]` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.geofencing.<a href="src/networkAsCode/geofencing/client.py">get_subscription</a>(...) -> GetSubscriptionGeofencingResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-retrieve Geofencing subscription information for a given subscription ID.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.geofencing.get_subscription(
-    subscription_id="subscriptionId",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Optional[str]` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.geofencing.<a href="src/networkAsCode/geofencing/client.py">delete_subscription</a>(...) -> typing.Optional[DeleteSubscriptionGeofencingResponse]</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-delete a given Geofencing subscription.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.geofencing.delete_subscription(
-    subscription_id="subscriptionId",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**subscription_id:** `str` — Subscription identifier that was obtained from the create event subscription operation
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Optional[str]` — Correlation id for the different services
+**phone_number:** `typing.Optional[str]` — A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
     
 </dd>
 </dl>
@@ -6050,661 +7941,6 @@ client.oauth.get_client_credentials()
 
 <dl>
 <dd>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-## CallForwardingSignal
-<details><summary><code>client.call_forwarding_signal.<a href="src/networkAsCode/call_forwarding_signal/client.py">retrieve_call_forwarding</a>(...) -> typing.List[RetrieveCallForwardingCallForwardingSignalResponseItem]</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-This endpoint provides information about wich type of call forwarding service is active. More than one service can be active, e.g. conditional and unconditional. This endpoit exceeds the main scope of the CFS API, for this reason an error code 501 can be returned.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.call_forwarding_signal.retrieve_call_forwarding(
-    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
-    phone_number="+99999991111",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Literal` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**phone_number:** `typing.Optional[str]` — A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.call_forwarding_signal.<a href="src/networkAsCode/call_forwarding_signal/client.py">retrieve_unconditional_call_forwarding</a>(...) -> RetrieveUnconditionalCallForwardingCallForwardingSignalResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-This endpoint provides information about the status of the unconditional call forwarding, beeing active or not.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.call_forwarding_signal.retrieve_unconditional_call_forwarding(
-    correlator="b4333c46-49c0-4f62-80d7-f0ef930f1c46",
-    phone_number="+99999991000",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Literal` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**phone_number:** `typing.Optional[str]` — A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-## Location
-<details><summary><code>client.location.<a href="src/networkAsCode/location/client.py">retrieve</a>(...) -> RetrieveLocationResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Retrieve the area where a certain user device is localized.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-from networkAsCode.location import RetrieveLocationRequestDevice
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.location.retrieve(
-    device=RetrieveLocationRequestDevice(
-        phone_number="+99999991000",
-    ),
-    max_age=60,
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**device:** `RetrieveLocationRequestDevice` 
-
-End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
-
-The developer can choose to provide the below specified device identifiers:
-
-* `ipv4Address`
-* `ipv6Address`
-* `phoneNumber`
-* `networkAccessIdentifier`
-
-NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**max_age:** `typing.Optional[int]` — Maximum age of the location information which is accepted for the location retrieval (in seconds)
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.location.<a href="src/networkAsCode/location/client.py">verify_v1</a>(...) -> VerifyV1LocationResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Verify whether the location of a device is within a requested area. The operation returns a verification result and, optionally, a match rate estimation for the location verification in percent.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-from networkAsCode.location import VerifyV1LocationRequestDevice, VerifyV1LocationRequestArea
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.location.verify_v_1(
-    device=VerifyV1LocationRequestDevice(
-        phone_number="+99999991000",
-    ),
-    area=VerifyV1LocationRequestArea(
-        area_type="CIRCLE",
-    ),
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**area:** `VerifyV1LocationRequestArea` — Base schema for all areas
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Optional[str]` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**device:** `typing.Optional[VerifyV1LocationRequestDevice]` 
-
-End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
-
-The developer can choose to provide the below specified device identifiers:
-
-* `ipv4Address`
-* `ipv6Address`
-* `phoneNumber`
-* `networkAccessIdentifier`
-
-NOTE1: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device
-NOTE2: for the Commonalities release v0.4, we are enforcing that the networkAccessIdentifier is only part of the schema for future-proofing, and CAMARA does not currently allow its use. After the CAMARA meta-release work is concluded and the relevant issues are resolved, its use will need to be explicitly documented in the guidelines.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**max_age:** `typing.Optional[int]` — The maximum age (in seconds) for the location known by the implementation, which is accepted for the verification. Absence of maxAge means "any age" and maxAge=0 means a fresh calculation.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.location.<a href="src/networkAsCode/location/client.py">verify</a>(...) -> VerifyLocationResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Verify whether the location of a device is within a requested area. The operation returns a verification result and, optionally, a match rate estimation for the location verification in percent.
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-from networkAsCode.location import VerifyLocationRequestDevice, VerifyLocationRequestArea
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.location.verify(
-    device=VerifyLocationRequestDevice(
-        phone_number="+99999991000",
-    ),
-    area=VerifyLocationRequestArea(
-        area_type="CIRCLE",
-    ),
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**device:** `VerifyLocationRequestDevice` 
-
-End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
-
-The developer can choose to provide the below specified device identifiers:
-
-* `ipv4Address`
-* `ipv6Address`
-* `phoneNumber`
-* `networkAccessIdentifier`
-
-NOTE: the MNO might support only a subset of these options. The API invoker can provide multiple identifiers to be compatible across different MNOs. In this case the identifiers MUST belong to the same device.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**area:** `VerifyLocationRequestArea` 
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**max_age:** `typing.Optional[int]` — The maximum age (in seconds) of the available location, which is accepted for the verification.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-## Number Verification v1.0.0
-<details><summary><code>client.number_verification_v100.<a href="src/networkAsCode/number_verification_v100/client.py">phone_number_share</a>(...) -> PhoneNumberShareResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-Returns the phone number so the API clients can verify the number themselves:
-- It will be done for the user that has authenticated via mobile network
-- It returns the authenticated user's `device phone number` associated to the access token
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.number_verification_v_100.phone_number_share()
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**code:** `typing.Optional[str]` — Authorization code received from the CSP
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**state:** `typing.Optional[str]` — Application state
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**correlator:** `typing.Optional[str]` — Correlation id for the different services
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**authorization:** `typing.Optional[str]` — authorization header for token
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request_options:** `typing.Optional[RequestOptions]` — Request-specific configuration.
-    
-</dd>
-</dl>
-</dd>
-</dl>
-
-
-</dd>
-</dl>
-</details>
-
-## NaC Authorization Server
-<details><summary><code>client.na_c_authorization_server.<a href="src/networkAsCode/na_c_authorization_server/client.py">get_jwks</a>(...) -> typing.Any</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
- 
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```python
-from networkAsCode import NetworkAsCodeApi
-from networkAsCode.environment import NetworkascodeApiEnvironment
-
-client = NetworkAsCodeApi(
-    api_key="<value>",
-    environment=NetworkascodeApiEnvironment.DEFAULT,
-)
-
-client.na_c_authorization_server.get_jwks(
-    nac_app_ref="nac_app_ref",
-)
-
-```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**nac_app_ref:** `str` 
-    
-</dd>
-</dl>
 
 <dl>
 <dd>

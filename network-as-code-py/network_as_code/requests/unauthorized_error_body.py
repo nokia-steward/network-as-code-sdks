@@ -9,6 +9,6 @@ class UnauthorizedErrorBodyParams(typing_extensions.TypedDict):
     code: typing_extensions.NotRequired[UnauthorizedErrorBodyCode]
     message: str
     """
-    Detailed error description
+    A human-readable description of what the event represents
     """
     

@@ -50,10 +50,6 @@ export interface CreateSessionQodRequest {
      * This may follow different formats depending on the service providers implementation.
      * Some options addresses:
      *
-     *
-     *
-     *
-     *
      *   - A UUID style string
      *   - Support for predefined profiles QOS_S, QOS_M, QOS_L, and QOS_E
      *   - A searchable descriptive name

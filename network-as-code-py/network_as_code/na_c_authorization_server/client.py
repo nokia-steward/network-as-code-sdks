@@ -5,8 +5,13 @@ import typing
 from ..core.client_wrapper import AsyncClientWrapper, SyncClientWrapper
 from ..core.request_options import RequestOptions
 from .raw_client import AsyncRawNaCAuthorizationServerClient, RawNaCAuthorizationServerClient
+from .requests.fill_openid4vp_auth_openid4vp_post_request_dcql_query import (
+    FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryParams,
+)
+from .types.fill_openid4vp_auth_openid4vp_post_response import FillOpenid4VpAuthOpenid4VpPostResponse
 
-
+# this is used as the default value for optional parameters
+OMIT = typing.cast(typing.Any, ...)
 class NaCAuthorizationServerClient:
     def __init__(self, *, client_wrapper: SyncClientWrapper):
         self._raw_client = RawNaCAuthorizationServerClient(client_wrapper=client_wrapper)
@@ -21,6 +26,45 @@ class NaCAuthorizationServerClient:
         RawNaCAuthorizationServerClient
         """
         return self._raw_client
+    
+    def fill_openid4vp_auth_openid4vp_post(self, *, nonce: typing.Optional[str] = OMIT, state: typing.Optional[str] = OMIT, dcql_query: typing.Optional[FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryParams] = OMIT, request_options: typing.Optional[RequestOptions] = None) -> FillOpenid4VpAuthOpenid4VpPostResponse:
+        """
+        Accepts incomplete OpenID4VP request; returns it with credential_authorization_jwt filled.
+        
+        Parameters
+        ----------
+        nonce : typing.Optional[str]
+        
+        state : typing.Optional[str]
+        
+        dcql_query : typing.Optional[FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryParams]
+        
+        request_options : typing.Optional[RequestOptions]
+            Request-specific configuration.
+        
+        Returns
+        -------
+        FillOpenid4VpAuthOpenid4VpPostResponse
+            
+        
+        Examples
+        --------
+        from networkAsCode import NetworkAsCodeApi
+        
+        client = NetworkAsCodeApi(
+            rapidapi_host="YOUR_RAPIDAPI_HOST",
+            api_key="YOUR_API_KEY",
+        )
+        client.na_c_authorization_server.fill_openid4vp_auth_openid4vp_post(
+            nonce="",
+            state="",
+            dcql_query={
+                "credentials": [{"format": "", "id": "", "meta": {"key": "value"}}]
+            },
+        )
+        """
+        _response = self._raw_client.fill_openid4vp_auth_openid4vp_post(nonce=nonce, state=state, dcql_query=dcql_query, request_options=request_options)
+        return _response.data
     
     def get_jwks(self, nac_app_ref: str, *, request_options: typing.Optional[RequestOptions] = None) -> typing.Any:
         """
@@ -66,6 +110,53 @@ class AsyncNaCAuthorizationServerClient:
         AsyncRawNaCAuthorizationServerClient
         """
         return self._raw_client
+    
+    async def fill_openid4vp_auth_openid4vp_post(self, *, nonce: typing.Optional[str] = OMIT, state: typing.Optional[str] = OMIT, dcql_query: typing.Optional[FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryParams] = OMIT, request_options: typing.Optional[RequestOptions] = None) -> FillOpenid4VpAuthOpenid4VpPostResponse:
+        """
+        Accepts incomplete OpenID4VP request; returns it with credential_authorization_jwt filled.
+        
+        Parameters
+        ----------
+        nonce : typing.Optional[str]
+        
+        state : typing.Optional[str]
+        
+        dcql_query : typing.Optional[FillOpenid4VpAuthOpenid4VpPostRequestDcqlQueryParams]
+        
+        request_options : typing.Optional[RequestOptions]
+            Request-specific configuration.
+        
+        Returns
+        -------
+        FillOpenid4VpAuthOpenid4VpPostResponse
+            
+        
+        Examples
+        --------
+        import asyncio
+        
+        from networkAsCode import AsyncNetworkAsCodeApi
+        
+        client = AsyncNetworkAsCodeApi(
+            rapidapi_host="YOUR_RAPIDAPI_HOST",
+            api_key="YOUR_API_KEY",
+        )
+        
+        
+        async def main() -> None:
+            await client.na_c_authorization_server.fill_openid4vp_auth_openid4vp_post(
+                nonce="",
+                state="",
+                dcql_query={
+                    "credentials": [{"format": "", "id": "", "meta": {"key": "value"}}]
+                },
+            )
+        
+        
+        asyncio.run(main())
+        """
+        _response = await self._raw_client.fill_openid4vp_auth_openid4vp_post(nonce=nonce, state=state, dcql_query=dcql_query, request_options=request_options)
+        return _response.data
     
     async def get_jwks(self, nac_app_ref: str, *, request_options: typing.Optional[RequestOptions] = None) -> typing.Any:
         """

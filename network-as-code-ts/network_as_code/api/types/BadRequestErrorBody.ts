@@ -3,17 +3,13 @@
 export interface BadRequestErrorBody {
     status?: string | undefined;
     code?: BadRequestErrorBody.Code | undefined;
-    /** Detailed error description */
+    /** A human-readable description of what the event represents */
     message: string;
 }
 
 export namespace BadRequestErrorBody {
     export const Code = {
         InvalidArgument: "INVALID_ARGUMENT",
-        OutOfRange: "OUT_OF_RANGE",
-        InvalidProtocol: "INVALID_PROTOCOL",
-        InvalidCredential: "INVALID_CREDENTIAL",
-        InvalidToken: "INVALID_TOKEN",
     } as const;
     export type Code = (typeof Code)[keyof typeof Code];
 }

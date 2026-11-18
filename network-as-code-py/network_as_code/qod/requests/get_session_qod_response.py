@@ -57,10 +57,6 @@ class GetSessionQodResponseParams(typing_extensions.TypedDict):
     This may follow different formats depending on the service providers implementation.
     Some options addresses:
     
-    
-    
-    
-    
       - A UUID style string
       - Support for predefined profiles QOS_S, QOS_M, QOS_L, and QOS_E
       - A searchable descriptive name
@@ -73,12 +69,12 @@ class GetSessionQodResponseParams(typing_extensions.TypedDict):
     """
     
     duration: int
-    started_at: typing_extensions.NotRequired[typing_extensions.Annotated[str, FieldMetadata(alias="startedAt")]]
+    started_at: typing_extensions.Annotated[int, FieldMetadata(alias="startedAt")]
     """
     Timestamp of session start in seconds since Unix epoch
     """
     
-    expires_at: typing_extensions.NotRequired[typing_extensions.Annotated[str, FieldMetadata(alias="expiresAt")]]
+    expires_at: typing_extensions.Annotated[int, FieldMetadata(alias="expiresAt")]
     """
     Timestamp of session expiration if the session was not deleted, in seconds since Unix epoch
     """

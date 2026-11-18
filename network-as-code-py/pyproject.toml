@@ -13,7 +13,7 @@ dependencies = [
     "filelock>=3.20.1",
 ]
 name = "network_as_code"
-version = "10.0.1"
+version = "10.0.3"
 description = ""
 
 [dependency-groups]

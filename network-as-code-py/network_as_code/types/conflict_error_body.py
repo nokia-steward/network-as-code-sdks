@@ -4,12 +4,19 @@ import typing
 
 import pydantic
 from ..core.pydantic_utilities import IS_PYDANTIC_V2, UniversalBaseModel
-from .conflict_error_body_code import ConflictErrorBodyCode
 
 
 class ConflictErrorBody(UniversalBaseModel):
-    status: typing.Optional[str] = None
-    code: typing.Optional[ConflictErrorBodyCode] = None
+    status: int = pydantic.Field()
+    """
+    HTTP status code returned along with this error response
+    """
+    
+    code: str = pydantic.Field()
+    """
+    Code given to this error
+    """
+    
     message: str = pydantic.Field()
     """
     Detailed error description

@@ -12,7 +12,7 @@ class UnauthorizedErrorBody(UniversalBaseModel):
     code: typing.Optional[UnauthorizedErrorBodyCode] = None
     message: str = pydantic.Field()
     """
-    Detailed error description
+    A human-readable description of what the event represents
     """
     
     

@@ -4,4 +4,4 @@ import enum
 
 
 class NetworkAsCodeApiEnvironment(enum.Enum):
-    DEFAULT = "https://network-as-code.p-eu.rapidapi.com"
+    DEFAULT = "https://network-as-code.p-eu.apihub.nokia.io"

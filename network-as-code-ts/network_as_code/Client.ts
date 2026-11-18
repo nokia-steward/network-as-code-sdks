@@ -15,6 +15,7 @@ import { NumberVerificationV100Client } from "./api/resources/numberVerification
 import { OauthClient } from "./api/resources/oauth/client/Client.js";
 import { QodClient } from "./api/resources/qod/client/Client.js";
 import { SimSwapClient } from "./api/resources/simSwap/client/Client.js";
+import { SimSwapSubscriptionsV030Client } from "./api/resources/simSwapSubscriptionsV030/client/Client.js";
 import { SliceClient } from "./api/resources/slice/client/Client.js";
 import { WellKnownMetadataClient } from "./api/resources/wellKnownMetadata/client/Client.js";
 import type { BaseClientOptions, BaseRequestOptions } from "./BaseClient.js";
@@ -30,22 +31,23 @@ export declare namespace NetworkAsCodeApiClient {
 export class NetworkAsCodeApiClient {
     protected readonly _options: NormalizedClientOptionsWithAuth<NetworkAsCodeApiClient.Options>;
     protected _slice: SliceClient | undefined;
-    protected _wellKnownMetadata: WellKnownMetadataClient | undefined;
-    protected _deviceStatus: DeviceStatusClient | undefined;
-    protected _consentInfo: ConsentInfoClient | undefined;
-    protected _numberRecycling: NumberRecyclingClient | undefined;
-    protected _numberVerification: NumberVerificationClient | undefined;
-    protected _congestionInsights: CongestionInsightsClient | undefined;
-    protected _simSwap: SimSwapClient | undefined;
-    protected _kyc: KycClient | undefined;
-    protected _qod: QodClient | undefined;
-    protected _deviceSwap: DeviceSwapClient | undefined;
-    protected _geofencing: GeofencingClient | undefined;
-    protected _oauth: OauthClient | undefined;
-    protected _callForwardingSignal: CallForwardingSignalClient | undefined;
     protected _location: LocationClient | undefined;
-    protected _numberVerificationV100: NumberVerificationV100Client | undefined;
+    protected _deviceStatus: DeviceStatusClient | undefined;
+    protected _numberVerification: NumberVerificationClient | undefined;
+    protected _simSwapSubscriptionsV030: SimSwapSubscriptionsV030Client | undefined;
+    protected _qod: QodClient | undefined;
     protected _naCAuthorizationServer: NaCAuthorizationServerClient | undefined;
+    protected _geofencing: GeofencingClient | undefined;
+    protected _congestionInsights: CongestionInsightsClient | undefined;
+    protected _numberVerificationV100: NumberVerificationV100Client | undefined;
+    protected _kyc: KycClient | undefined;
+    protected _simSwap: SimSwapClient | undefined;
+    protected _callForwardingSignal: CallForwardingSignalClient | undefined;
+    protected _numberRecycling: NumberRecyclingClient | undefined;
+    protected _deviceSwap: DeviceSwapClient | undefined;
+    protected _wellKnownMetadata: WellKnownMetadataClient | undefined;
+    protected _consentInfo: ConsentInfoClient | undefined;
+    protected _oauth: OauthClient | undefined;
 
     constructor(options: NetworkAsCodeApiClient.Options) {
         this._options = normalizeClientOptionsWithAuth(options);
@@ -55,68 +57,72 @@ export class NetworkAsCodeApiClient {
         return (this._slice ??= new SliceClient(this._options));
     }
 
-    public get wellKnownMetadata(): WellKnownMetadataClient {
-        return (this._wellKnownMetadata ??= new WellKnownMetadataClient(this._options));
+    public get location(): LocationClient {
+        return (this._location ??= new LocationClient(this._options));
     }
 
     public get deviceStatus(): DeviceStatusClient {
         return (this._deviceStatus ??= new DeviceStatusClient(this._options));
     }
 
-    public get consentInfo(): ConsentInfoClient {
-        return (this._consentInfo ??= new ConsentInfoClient(this._options));
-    }
-
-    public get numberRecycling(): NumberRecyclingClient {
-        return (this._numberRecycling ??= new NumberRecyclingClient(this._options));
-    }
-
     public get numberVerification(): NumberVerificationClient {
         return (this._numberVerification ??= new NumberVerificationClient(this._options));
     }
 
-    public get congestionInsights(): CongestionInsightsClient {
-        return (this._congestionInsights ??= new CongestionInsightsClient(this._options));
-    }
-
-    public get simSwap(): SimSwapClient {
-        return (this._simSwap ??= new SimSwapClient(this._options));
-    }
-
-    public get kyc(): KycClient {
-        return (this._kyc ??= new KycClient(this._options));
+    public get simSwapSubscriptionsV030(): SimSwapSubscriptionsV030Client {
+        return (this._simSwapSubscriptionsV030 ??= new SimSwapSubscriptionsV030Client(this._options));
     }
 
     public get qod(): QodClient {
         return (this._qod ??= new QodClient(this._options));
     }
 
-    public get deviceSwap(): DeviceSwapClient {
-        return (this._deviceSwap ??= new DeviceSwapClient(this._options));
+    public get naCAuthorizationServer(): NaCAuthorizationServerClient {
+        return (this._naCAuthorizationServer ??= new NaCAuthorizationServerClient(this._options));
     }
 
     public get geofencing(): GeofencingClient {
         return (this._geofencing ??= new GeofencingClient(this._options));
     }
 
-    public get oauth(): OauthClient {
-        return (this._oauth ??= new OauthClient(this._options));
-    }
-
-    public get callForwardingSignal(): CallForwardingSignalClient {
-        return (this._callForwardingSignal ??= new CallForwardingSignalClient(this._options));
-    }
-
-    public get location(): LocationClient {
-        return (this._location ??= new LocationClient(this._options));
+    public get congestionInsights(): CongestionInsightsClient {
+        return (this._congestionInsights ??= new CongestionInsightsClient(this._options));
     }
 
     public get numberVerificationV100(): NumberVerificationV100Client {
         return (this._numberVerificationV100 ??= new NumberVerificationV100Client(this._options));
     }
 
-    public get naCAuthorizationServer(): NaCAuthorizationServerClient {
-        return (this._naCAuthorizationServer ??= new NaCAuthorizationServerClient(this._options));
+    public get kyc(): KycClient {
+        return (this._kyc ??= new KycClient(this._options));
+    }
+
+    public get simSwap(): SimSwapClient {
+        return (this._simSwap ??= new SimSwapClient(this._options));
+    }
+
+    public get callForwardingSignal(): CallForwardingSignalClient {
+        return (this._callForwardingSignal ??= new CallForwardingSignalClient(this._options));
+    }
+
+    public get numberRecycling(): NumberRecyclingClient {
+        return (this._numberRecycling ??= new NumberRecyclingClient(this._options));
+    }
+
+    public get deviceSwap(): DeviceSwapClient {
+        return (this._deviceSwap ??= new DeviceSwapClient(this._options));
+    }
+
+    public get wellKnownMetadata(): WellKnownMetadataClient {
+        return (this._wellKnownMetadata ??= new WellKnownMetadataClient(this._options));
+    }
+
+    public get consentInfo(): ConsentInfoClient {
+        return (this._consentInfo ??= new ConsentInfoClient(this._options));
+    }
+
+    public get oauth(): OauthClient {
+        return (this._oauth ??= new OauthClient(this._options));
     }
 
     /**

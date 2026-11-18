@@ -3,14 +3,13 @@
 export interface UnauthorizedErrorBody {
     status?: string | undefined;
     code?: UnauthorizedErrorBody.Code | undefined;
-    /** Detailed error description */
+    /** A human-readable description of what the event represents */
     message: string;
 }
 
 export namespace UnauthorizedErrorBody {
     export const Code = {
         Unauthenticated: "UNAUTHENTICATED",
-        AuthenticationRequired: "AUTHENTICATION_REQUIRED",
     } as const;
     export type Code = (typeof Code)[keyof typeof Code];
 }

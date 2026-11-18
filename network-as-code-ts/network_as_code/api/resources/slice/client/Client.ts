@@ -23,6 +23,154 @@ export class SliceClient {
     }
 
     /**
+     * Get network slice data.
+     *
+     * @param {NetworkAsCodeApi.GetSliceSliceRequest} request
+     * @param {SliceClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link NetworkAsCodeApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.slice.getSlice({
+     *         id: "id"
+     *     })
+     */
+    public getSlice(
+        request: NetworkAsCodeApi.GetSliceSliceRequest,
+        requestOptions?: SliceClient.RequestOptions,
+    ): core.HttpResponsePromise<NetworkAsCodeApi.GetSliceSliceResponse> {
+        return core.HttpResponsePromise.fromPromise(this.__getSlice(request, requestOptions));
+    }
+
+    private async __getSlice(
+        request: NetworkAsCodeApi.GetSliceSliceRequest,
+        requestOptions?: SliceClient.RequestOptions,
+    ): Promise<core.WithRawResponse<NetworkAsCodeApi.GetSliceSliceResponse>> {
+        const { id } = request;
+        const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
+        const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
+            _authRequest.headers,
+            this._options?.headers,
+            mergeOnlyDefinedHeaders({ "x-rapidapi-host": requestOptions?.rapidapiHost ?? this._options?.rapidapiHost }),
+            requestOptions?.headers,
+        );
+        const _response = await core.fetcher({
+            url: core.url.join(
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.NetworkAsCodeApiEnvironment.Default,
+                `slice/v1/slices/${core.url.encodePathParam(id)}`,
+            ),
+            method: "GET",
+            headers: _headers,
+            queryParameters: requestOptions?.queryParams,
+            timeoutMs: (requestOptions?.timeoutInSeconds ?? this._options?.timeoutInSeconds ?? 60) * 1000,
+            maxRetries: requestOptions?.maxRetries ?? this._options?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+            fetchFn: this._options?.fetch,
+            logging: this._options.logging,
+        });
+        if (_response.ok) {
+            return {
+                data: _response.body as NetworkAsCodeApi.GetSliceSliceResponse,
+                rawResponse: _response.rawResponse,
+            };
+        }
+
+        if (_response.error.reason === "status-code") {
+            switch (_response.error.statusCode) {
+                case 422:
+                    throw new NetworkAsCodeApi.UnprocessableEntityError(
+                        _response.error.body as unknown,
+                        _response.rawResponse,
+                    );
+                default:
+                    throw new errors.NetworkAsCodeApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                        rawResponse: _response.rawResponse,
+                    });
+            }
+        }
+
+        return handleNonStatusCodeError(_response.error, _response.rawResponse, "GET", "/slice/v1/slices/{id}");
+    }
+
+    /**
+     * Delete network slice. The slice state must not be active to perform this operation.
+     *
+     * @param {NetworkAsCodeApi.DeleteSliceSliceRequest} request
+     * @param {SliceClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link NetworkAsCodeApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.slice.deleteSlice({
+     *         id: "id"
+     *     })
+     */
+    public deleteSlice(
+        request: NetworkAsCodeApi.DeleteSliceSliceRequest,
+        requestOptions?: SliceClient.RequestOptions,
+    ): core.HttpResponsePromise<NetworkAsCodeApi.DeleteSliceSliceResponse> {
+        return core.HttpResponsePromise.fromPromise(this.__deleteSlice(request, requestOptions));
+    }
+
+    private async __deleteSlice(
+        request: NetworkAsCodeApi.DeleteSliceSliceRequest,
+        requestOptions?: SliceClient.RequestOptions,
+    ): Promise<core.WithRawResponse<NetworkAsCodeApi.DeleteSliceSliceResponse>> {
+        const { id } = request;
+        const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
+        const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
+            _authRequest.headers,
+            this._options?.headers,
+            mergeOnlyDefinedHeaders({ "x-rapidapi-host": requestOptions?.rapidapiHost ?? this._options?.rapidapiHost }),
+            requestOptions?.headers,
+        );
+        const _response = await core.fetcher({
+            url: core.url.join(
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.NetworkAsCodeApiEnvironment.Default,
+                `slice/v1/slices/${core.url.encodePathParam(id)}`,
+            ),
+            method: "DELETE",
+            headers: _headers,
+            queryParameters: requestOptions?.queryParams,
+            timeoutMs: (requestOptions?.timeoutInSeconds ?? this._options?.timeoutInSeconds ?? 60) * 1000,
+            maxRetries: requestOptions?.maxRetries ?? this._options?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+            fetchFn: this._options?.fetch,
+            logging: this._options.logging,
+        });
+        if (_response.ok) {
+            return {
+                data: _response.body as NetworkAsCodeApi.DeleteSliceSliceResponse,
+                rawResponse: _response.rawResponse,
+            };
+        }
+
+        if (_response.error.reason === "status-code") {
+            switch (_response.error.statusCode) {
+                case 422:
+                    throw new NetworkAsCodeApi.UnprocessableEntityError(
+                        _response.error.body as unknown,
+                        _response.rawResponse,
+                    );
+                default:
+                    throw new errors.NetworkAsCodeApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                        rawResponse: _response.rawResponse,
+                    });
+            }
+        }
+
+        return handleNonStatusCodeError(_response.error, _response.rawResponse, "DELETE", "/slice/v1/slices/{id}");
+    }
+
+    /**
      * Retrieve the given device attach resources associated with the owner.
      *
      * @param {SliceClient.RequestOptions} requestOptions - Request-specific configuration.
@@ -179,6 +327,238 @@ export class SliceClient {
             _response.rawResponse,
             "POST",
             "/device-attach/v0/attachments",
+        );
+    }
+
+    /**
+     * Returns All created Network Slices
+     *
+     * @param {SliceClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @example
+     *     await client.slice.listSlices()
+     */
+    public listSlices(
+        requestOptions?: SliceClient.RequestOptions,
+    ): core.HttpResponsePromise<NetworkAsCodeApi.ListSlicesSliceResponseItem[]> {
+        return core.HttpResponsePromise.fromPromise(this.__listSlices(requestOptions));
+    }
+
+    private async __listSlices(
+        requestOptions?: SliceClient.RequestOptions,
+    ): Promise<core.WithRawResponse<NetworkAsCodeApi.ListSlicesSliceResponseItem[]>> {
+        const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
+        const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
+            _authRequest.headers,
+            this._options?.headers,
+            mergeOnlyDefinedHeaders({ "x-rapidapi-host": requestOptions?.rapidapiHost ?? this._options?.rapidapiHost }),
+            requestOptions?.headers,
+        );
+        const _response = await core.fetcher({
+            url: core.url.join(
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.NetworkAsCodeApiEnvironment.Default,
+                "slice/v1/slices",
+            ),
+            method: "GET",
+            headers: _headers,
+            queryParameters: requestOptions?.queryParams,
+            timeoutMs: (requestOptions?.timeoutInSeconds ?? this._options?.timeoutInSeconds ?? 60) * 1000,
+            maxRetries: requestOptions?.maxRetries ?? this._options?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+            fetchFn: this._options?.fetch,
+            logging: this._options.logging,
+        });
+        if (_response.ok) {
+            return {
+                data: _response.body as NetworkAsCodeApi.ListSlicesSliceResponseItem[],
+                rawResponse: _response.rawResponse,
+            };
+        }
+
+        if (_response.error.reason === "status-code") {
+            throw new errors.NetworkAsCodeApiError({
+                statusCode: _response.error.statusCode,
+                body: _response.error.body,
+                rawResponse: _response.rawResponse,
+            });
+        }
+
+        return handleNonStatusCodeError(_response.error, _response.rawResponse, "GET", "/slice/v1/slices");
+    }
+
+    /**
+     * Create a network slice.
+     *
+     * @param {NetworkAsCodeApi.CreateSliceSliceRequest} request
+     * @param {SliceClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link NetworkAsCodeApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.slice.createSlice({
+     *         notificationUrl: "https://example.com/notify",
+     *         notificationAuthToken: "6207f4c159esfnjsf6280c0e8417090d91710b8c9369f21d9b616ebe809d28c5dc4b1428447fa5d83988b516595253bae24e2a9eb22f43523f2ab1997dd7",
+     *         networkIdentifier: {
+     *             mcc: "236",
+     *             mnc: "30"
+     *         },
+     *         sliceInfo: {
+     *             serviceType: 1,
+     *             differentiator: "0003E8"
+     *         },
+     *         maxDataConnections: 42312,
+     *         maxDevices: 33,
+     *         sliceUplinkThroughput: {
+     *             guaranteed: 15,
+     *             maximum: 999999
+     *         },
+     *         deviceUplinkThroughput: {
+     *             guaranteed: 10,
+     *             maximum: 20
+     *         }
+     *     })
+     */
+    public createSlice(
+        request: NetworkAsCodeApi.CreateSliceSliceRequest,
+        requestOptions?: SliceClient.RequestOptions,
+    ): core.HttpResponsePromise<NetworkAsCodeApi.CreateSliceSliceResponse> {
+        return core.HttpResponsePromise.fromPromise(this.__createSlice(request, requestOptions));
+    }
+
+    private async __createSlice(
+        request: NetworkAsCodeApi.CreateSliceSliceRequest,
+        requestOptions?: SliceClient.RequestOptions,
+    ): Promise<core.WithRawResponse<NetworkAsCodeApi.CreateSliceSliceResponse>> {
+        const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
+        const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
+            _authRequest.headers,
+            this._options?.headers,
+            mergeOnlyDefinedHeaders({ "x-rapidapi-host": requestOptions?.rapidapiHost ?? this._options?.rapidapiHost }),
+            requestOptions?.headers,
+        );
+        const _response = await core.fetcher({
+            url: core.url.join(
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.NetworkAsCodeApiEnvironment.Default,
+                "slice/v1/slices",
+            ),
+            method: "POST",
+            headers: _headers,
+            contentType: "application/json",
+            queryParameters: requestOptions?.queryParams,
+            requestType: "json",
+            body: request,
+            timeoutMs: (requestOptions?.timeoutInSeconds ?? this._options?.timeoutInSeconds ?? 60) * 1000,
+            maxRetries: requestOptions?.maxRetries ?? this._options?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+            fetchFn: this._options?.fetch,
+            logging: this._options.logging,
+        });
+        if (_response.ok) {
+            return {
+                data: _response.body as NetworkAsCodeApi.CreateSliceSliceResponse,
+                rawResponse: _response.rawResponse,
+            };
+        }
+
+        if (_response.error.reason === "status-code") {
+            switch (_response.error.statusCode) {
+                case 422:
+                    throw new NetworkAsCodeApi.UnprocessableEntityError(
+                        _response.error.body as unknown,
+                        _response.rawResponse,
+                    );
+                default:
+                    throw new errors.NetworkAsCodeApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                        rawResponse: _response.rawResponse,
+                    });
+            }
+        }
+
+        return handleNonStatusCodeError(_response.error, _response.rawResponse, "POST", "/slice/v1/slices");
+    }
+
+    /**
+     * Deactivate a network slice. The slice state must be active to be able to perform this operation.
+     *
+     * @param {NetworkAsCodeApi.DeactivateSliceRequest} request
+     * @param {SliceClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link NetworkAsCodeApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.slice.deactivate({
+     *         id: "id"
+     *     })
+     */
+    public deactivate(
+        request: NetworkAsCodeApi.DeactivateSliceRequest,
+        requestOptions?: SliceClient.RequestOptions,
+    ): core.HttpResponsePromise<NetworkAsCodeApi.DeactivateSliceResponse> {
+        return core.HttpResponsePromise.fromPromise(this.__deactivate(request, requestOptions));
+    }
+
+    private async __deactivate(
+        request: NetworkAsCodeApi.DeactivateSliceRequest,
+        requestOptions?: SliceClient.RequestOptions,
+    ): Promise<core.WithRawResponse<NetworkAsCodeApi.DeactivateSliceResponse>> {
+        const { id } = request;
+        const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
+        const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
+            _authRequest.headers,
+            this._options?.headers,
+            mergeOnlyDefinedHeaders({ "x-rapidapi-host": requestOptions?.rapidapiHost ?? this._options?.rapidapiHost }),
+            requestOptions?.headers,
+        );
+        const _response = await core.fetcher({
+            url: core.url.join(
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.NetworkAsCodeApiEnvironment.Default,
+                `slice/v1/slices/${core.url.encodePathParam(id)}/deactivate`,
+            ),
+            method: "POST",
+            headers: _headers,
+            queryParameters: requestOptions?.queryParams,
+            timeoutMs: (requestOptions?.timeoutInSeconds ?? this._options?.timeoutInSeconds ?? 60) * 1000,
+            maxRetries: requestOptions?.maxRetries ?? this._options?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+            fetchFn: this._options?.fetch,
+            logging: this._options.logging,
+        });
+        if (_response.ok) {
+            return {
+                data: _response.body as NetworkAsCodeApi.DeactivateSliceResponse,
+                rawResponse: _response.rawResponse,
+            };
+        }
+
+        if (_response.error.reason === "status-code") {
+            switch (_response.error.statusCode) {
+                case 422:
+                    throw new NetworkAsCodeApi.UnprocessableEntityError(
+                        _response.error.body as unknown,
+                        _response.rawResponse,
+                    );
+                default:
+                    throw new errors.NetworkAsCodeApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                        rawResponse: _response.rawResponse,
+                    });
+            }
+        }
+
+        return handleNonStatusCodeError(
+            _response.error,
+            _response.rawResponse,
+            "POST",
+            "/slice/v1/slices/{id}/deactivate",
         );
     }
 
@@ -420,238 +800,6 @@ export class SliceClient {
     }
 
     /**
-     * Deactivate a network slice. The slice state must be active to be able to perform this operation.
-     *
-     * @param {NetworkAsCodeApi.DeactivateSliceRequest} request
-     * @param {SliceClient.RequestOptions} requestOptions - Request-specific configuration.
-     *
-     * @throws {@link NetworkAsCodeApi.UnprocessableEntityError}
-     *
-     * @example
-     *     await client.slice.deactivate({
-     *         id: "id"
-     *     })
-     */
-    public deactivate(
-        request: NetworkAsCodeApi.DeactivateSliceRequest,
-        requestOptions?: SliceClient.RequestOptions,
-    ): core.HttpResponsePromise<NetworkAsCodeApi.DeactivateSliceResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__deactivate(request, requestOptions));
-    }
-
-    private async __deactivate(
-        request: NetworkAsCodeApi.DeactivateSliceRequest,
-        requestOptions?: SliceClient.RequestOptions,
-    ): Promise<core.WithRawResponse<NetworkAsCodeApi.DeactivateSliceResponse>> {
-        const { id } = request;
-        const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
-        const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
-            _authRequest.headers,
-            this._options?.headers,
-            mergeOnlyDefinedHeaders({ "x-rapidapi-host": requestOptions?.rapidapiHost ?? this._options?.rapidapiHost }),
-            requestOptions?.headers,
-        );
-        const _response = await core.fetcher({
-            url: core.url.join(
-                (await core.Supplier.get(this._options.baseUrl)) ??
-                    (await core.Supplier.get(this._options.environment)) ??
-                    environments.NetworkAsCodeApiEnvironment.Default,
-                `slice/v1/slices/${core.url.encodePathParam(id)}/deactivate`,
-            ),
-            method: "POST",
-            headers: _headers,
-            queryParameters: requestOptions?.queryParams,
-            timeoutMs: (requestOptions?.timeoutInSeconds ?? this._options?.timeoutInSeconds ?? 60) * 1000,
-            maxRetries: requestOptions?.maxRetries ?? this._options?.maxRetries,
-            abortSignal: requestOptions?.abortSignal,
-            fetchFn: this._options?.fetch,
-            logging: this._options.logging,
-        });
-        if (_response.ok) {
-            return {
-                data: _response.body as NetworkAsCodeApi.DeactivateSliceResponse,
-                rawResponse: _response.rawResponse,
-            };
-        }
-
-        if (_response.error.reason === "status-code") {
-            switch (_response.error.statusCode) {
-                case 422:
-                    throw new NetworkAsCodeApi.UnprocessableEntityError(
-                        _response.error.body as unknown,
-                        _response.rawResponse,
-                    );
-                default:
-                    throw new errors.NetworkAsCodeApiError({
-                        statusCode: _response.error.statusCode,
-                        body: _response.error.body,
-                        rawResponse: _response.rawResponse,
-                    });
-            }
-        }
-
-        return handleNonStatusCodeError(
-            _response.error,
-            _response.rawResponse,
-            "POST",
-            "/slice/v1/slices/{id}/deactivate",
-        );
-    }
-
-    /**
-     * Returns All created Network Slices
-     *
-     * @param {SliceClient.RequestOptions} requestOptions - Request-specific configuration.
-     *
-     * @example
-     *     await client.slice.listSlices()
-     */
-    public listSlices(
-        requestOptions?: SliceClient.RequestOptions,
-    ): core.HttpResponsePromise<NetworkAsCodeApi.ListSlicesSliceResponseItem[]> {
-        return core.HttpResponsePromise.fromPromise(this.__listSlices(requestOptions));
-    }
-
-    private async __listSlices(
-        requestOptions?: SliceClient.RequestOptions,
-    ): Promise<core.WithRawResponse<NetworkAsCodeApi.ListSlicesSliceResponseItem[]>> {
-        const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
-        const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
-            _authRequest.headers,
-            this._options?.headers,
-            mergeOnlyDefinedHeaders({ "x-rapidapi-host": requestOptions?.rapidapiHost ?? this._options?.rapidapiHost }),
-            requestOptions?.headers,
-        );
-        const _response = await core.fetcher({
-            url: core.url.join(
-                (await core.Supplier.get(this._options.baseUrl)) ??
-                    (await core.Supplier.get(this._options.environment)) ??
-                    environments.NetworkAsCodeApiEnvironment.Default,
-                "slice/v1/slices",
-            ),
-            method: "GET",
-            headers: _headers,
-            queryParameters: requestOptions?.queryParams,
-            timeoutMs: (requestOptions?.timeoutInSeconds ?? this._options?.timeoutInSeconds ?? 60) * 1000,
-            maxRetries: requestOptions?.maxRetries ?? this._options?.maxRetries,
-            abortSignal: requestOptions?.abortSignal,
-            fetchFn: this._options?.fetch,
-            logging: this._options.logging,
-        });
-        if (_response.ok) {
-            return {
-                data: _response.body as NetworkAsCodeApi.ListSlicesSliceResponseItem[],
-                rawResponse: _response.rawResponse,
-            };
-        }
-
-        if (_response.error.reason === "status-code") {
-            throw new errors.NetworkAsCodeApiError({
-                statusCode: _response.error.statusCode,
-                body: _response.error.body,
-                rawResponse: _response.rawResponse,
-            });
-        }
-
-        return handleNonStatusCodeError(_response.error, _response.rawResponse, "GET", "/slice/v1/slices");
-    }
-
-    /**
-     * Create a network slice.
-     *
-     * @param {NetworkAsCodeApi.CreateSliceSliceRequest} request
-     * @param {SliceClient.RequestOptions} requestOptions - Request-specific configuration.
-     *
-     * @throws {@link NetworkAsCodeApi.UnprocessableEntityError}
-     *
-     * @example
-     *     await client.slice.createSlice({
-     *         notificationUrl: "https://example.com/notify",
-     *         notificationAuthToken: "6207f4c159esfnjsf6280c0e8417090d91710b8c9369f21d9b616ebe809d28c5dc4b1428447fa5d83988b516595253bae24e2a9eb22f43523f2ab1997dd7",
-     *         networkIdentifier: {
-     *             mcc: "236",
-     *             mnc: "30"
-     *         },
-     *         sliceInfo: {
-     *             serviceType: 1,
-     *             differentiator: "0003E8"
-     *         },
-     *         maxDataConnections: 42312,
-     *         maxDevices: 33,
-     *         sliceUplinkThroughput: {
-     *             guaranteed: 15,
-     *             maximum: 999999
-     *         },
-     *         deviceUplinkThroughput: {
-     *             guaranteed: 10,
-     *             maximum: 20
-     *         }
-     *     })
-     */
-    public createSlice(
-        request: NetworkAsCodeApi.CreateSliceSliceRequest,
-        requestOptions?: SliceClient.RequestOptions,
-    ): core.HttpResponsePromise<NetworkAsCodeApi.CreateSliceSliceResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__createSlice(request, requestOptions));
-    }
-
-    private async __createSlice(
-        request: NetworkAsCodeApi.CreateSliceSliceRequest,
-        requestOptions?: SliceClient.RequestOptions,
-    ): Promise<core.WithRawResponse<NetworkAsCodeApi.CreateSliceSliceResponse>> {
-        const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
-        const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
-            _authRequest.headers,
-            this._options?.headers,
-            mergeOnlyDefinedHeaders({ "x-rapidapi-host": requestOptions?.rapidapiHost ?? this._options?.rapidapiHost }),
-            requestOptions?.headers,
-        );
-        const _response = await core.fetcher({
-            url: core.url.join(
-                (await core.Supplier.get(this._options.baseUrl)) ??
-                    (await core.Supplier.get(this._options.environment)) ??
-                    environments.NetworkAsCodeApiEnvironment.Default,
-                "slice/v1/slices",
-            ),
-            method: "POST",
-            headers: _headers,
-            contentType: "application/json",
-            queryParameters: requestOptions?.queryParams,
-            requestType: "json",
-            body: request,
-            timeoutMs: (requestOptions?.timeoutInSeconds ?? this._options?.timeoutInSeconds ?? 60) * 1000,
-            maxRetries: requestOptions?.maxRetries ?? this._options?.maxRetries,
-            abortSignal: requestOptions?.abortSignal,
-            fetchFn: this._options?.fetch,
-            logging: this._options.logging,
-        });
-        if (_response.ok) {
-            return {
-                data: _response.body as NetworkAsCodeApi.CreateSliceSliceResponse,
-                rawResponse: _response.rawResponse,
-            };
-        }
-
-        if (_response.error.reason === "status-code") {
-            switch (_response.error.statusCode) {
-                case 422:
-                    throw new NetworkAsCodeApi.UnprocessableEntityError(
-                        _response.error.body as unknown,
-                        _response.rawResponse,
-                    );
-                default:
-                    throw new errors.NetworkAsCodeApiError({
-                        statusCode: _response.error.statusCode,
-                        body: _response.error.body,
-                        rawResponse: _response.rawResponse,
-                    });
-            }
-        }
-
-        return handleNonStatusCodeError(_response.error, _response.rawResponse, "POST", "/slice/v1/slices");
-    }
-
-    /**
      * Create subscriber in a given slice.
      *
      * @param {NetworkAsCodeApi.SubscriberOperationSliceRequest} request
@@ -753,153 +901,5 @@ export class SliceClient {
             "POST",
             "/device-attach/v0/attachments/subscribers/{operation}",
         );
-    }
-
-    /**
-     * Get network slice data.
-     *
-     * @param {NetworkAsCodeApi.GetSliceSliceRequest} request
-     * @param {SliceClient.RequestOptions} requestOptions - Request-specific configuration.
-     *
-     * @throws {@link NetworkAsCodeApi.UnprocessableEntityError}
-     *
-     * @example
-     *     await client.slice.getSlice({
-     *         id: "id"
-     *     })
-     */
-    public getSlice(
-        request: NetworkAsCodeApi.GetSliceSliceRequest,
-        requestOptions?: SliceClient.RequestOptions,
-    ): core.HttpResponsePromise<NetworkAsCodeApi.GetSliceSliceResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__getSlice(request, requestOptions));
-    }
-
-    private async __getSlice(
-        request: NetworkAsCodeApi.GetSliceSliceRequest,
-        requestOptions?: SliceClient.RequestOptions,
-    ): Promise<core.WithRawResponse<NetworkAsCodeApi.GetSliceSliceResponse>> {
-        const { id } = request;
-        const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
-        const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
-            _authRequest.headers,
-            this._options?.headers,
-            mergeOnlyDefinedHeaders({ "x-rapidapi-host": requestOptions?.rapidapiHost ?? this._options?.rapidapiHost }),
-            requestOptions?.headers,
-        );
-        const _response = await core.fetcher({
-            url: core.url.join(
-                (await core.Supplier.get(this._options.baseUrl)) ??
-                    (await core.Supplier.get(this._options.environment)) ??
-                    environments.NetworkAsCodeApiEnvironment.Default,
-                `slice/v1/slices/${core.url.encodePathParam(id)}`,
-            ),
-            method: "GET",
-            headers: _headers,
-            queryParameters: requestOptions?.queryParams,
-            timeoutMs: (requestOptions?.timeoutInSeconds ?? this._options?.timeoutInSeconds ?? 60) * 1000,
-            maxRetries: requestOptions?.maxRetries ?? this._options?.maxRetries,
-            abortSignal: requestOptions?.abortSignal,
-            fetchFn: this._options?.fetch,
-            logging: this._options.logging,
-        });
-        if (_response.ok) {
-            return {
-                data: _response.body as NetworkAsCodeApi.GetSliceSliceResponse,
-                rawResponse: _response.rawResponse,
-            };
-        }
-
-        if (_response.error.reason === "status-code") {
-            switch (_response.error.statusCode) {
-                case 422:
-                    throw new NetworkAsCodeApi.UnprocessableEntityError(
-                        _response.error.body as unknown,
-                        _response.rawResponse,
-                    );
-                default:
-                    throw new errors.NetworkAsCodeApiError({
-                        statusCode: _response.error.statusCode,
-                        body: _response.error.body,
-                        rawResponse: _response.rawResponse,
-                    });
-            }
-        }
-
-        return handleNonStatusCodeError(_response.error, _response.rawResponse, "GET", "/slice/v1/slices/{id}");
-    }
-
-    /**
-     * Delete network slice. The slice state must not be active to perform this operation.
-     *
-     * @param {NetworkAsCodeApi.DeleteSliceSliceRequest} request
-     * @param {SliceClient.RequestOptions} requestOptions - Request-specific configuration.
-     *
-     * @throws {@link NetworkAsCodeApi.UnprocessableEntityError}
-     *
-     * @example
-     *     await client.slice.deleteSlice({
-     *         id: "id"
-     *     })
-     */
-    public deleteSlice(
-        request: NetworkAsCodeApi.DeleteSliceSliceRequest,
-        requestOptions?: SliceClient.RequestOptions,
-    ): core.HttpResponsePromise<NetworkAsCodeApi.DeleteSliceSliceResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__deleteSlice(request, requestOptions));
-    }
-
-    private async __deleteSlice(
-        request: NetworkAsCodeApi.DeleteSliceSliceRequest,
-        requestOptions?: SliceClient.RequestOptions,
-    ): Promise<core.WithRawResponse<NetworkAsCodeApi.DeleteSliceSliceResponse>> {
-        const { id } = request;
-        const _authRequest: core.AuthRequest = await this._options.authProvider.getAuthRequest();
-        const _headers: core.Fetcher.Args["headers"] = mergeHeaders(
-            _authRequest.headers,
-            this._options?.headers,
-            mergeOnlyDefinedHeaders({ "x-rapidapi-host": requestOptions?.rapidapiHost ?? this._options?.rapidapiHost }),
-            requestOptions?.headers,
-        );
-        const _response = await core.fetcher({
-            url: core.url.join(
-                (await core.Supplier.get(this._options.baseUrl)) ??
-                    (await core.Supplier.get(this._options.environment)) ??
-                    environments.NetworkAsCodeApiEnvironment.Default,
-                `slice/v1/slices/${core.url.encodePathParam(id)}`,
-            ),
-            method: "DELETE",
-            headers: _headers,
-            queryParameters: requestOptions?.queryParams,
-            timeoutMs: (requestOptions?.timeoutInSeconds ?? this._options?.timeoutInSeconds ?? 60) * 1000,
-            maxRetries: requestOptions?.maxRetries ?? this._options?.maxRetries,
-            abortSignal: requestOptions?.abortSignal,
-            fetchFn: this._options?.fetch,
-            logging: this._options.logging,
-        });
-        if (_response.ok) {
-            return {
-                data: _response.body as NetworkAsCodeApi.DeleteSliceSliceResponse,
-                rawResponse: _response.rawResponse,
-            };
-        }
-
-        if (_response.error.reason === "status-code") {
-            switch (_response.error.statusCode) {
-                case 422:
-                    throw new NetworkAsCodeApi.UnprocessableEntityError(
-                        _response.error.body as unknown,
-                        _response.rawResponse,
-                    );
-                default:
-                    throw new errors.NetworkAsCodeApiError({
-                        statusCode: _response.error.statusCode,
-                        body: _response.error.body,
-                        rawResponse: _response.rawResponse,
-                    });
-            }
-        }
-
-        return handleNonStatusCodeError(_response.error, _response.rawResponse, "DELETE", "/slice/v1/slices/{id}");
     }
 }
